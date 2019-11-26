@@ -6,15 +6,31 @@ import org.sat4j.reader.ParseFormatException;
 import org.sat4j.specs.*;
 import org.sat4j.tools.ModelIterator;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.sat4j.reader.Reader;
 
 public class Main {
+
+    /*
+    public void printName(int num) {
+        File file = new File("/src/main/java/Main/ecos_x86.dimacs");
+        Scanner scr = null;
+        try {
+            scr = new Scanner(file);
+            while(scr.hasNext()){
+                System.out.println("line : "+scr.next());
+            }
+        } catch (FileNotFoundException ex) {
+            System.out.println("F");
+        }
+    }
+*/
     public static void main(String[] args) {
 
         ISolver solver = SolverFactory.newDefault();
@@ -46,7 +62,7 @@ public class Main {
                 boolean isSatisfiable = problemI.isSatisfiable(vecInt);
                 if (!isSatisfiable){
                     numberOfBadValues ++;
-                    badValues.add(i);
+                    badValues.add(Integer.toString(i));
                 }
             }
            System.out.println("TASK B.2");
@@ -54,6 +70,18 @@ public class Main {
            System.out.println("we have: " + numberOfBadValues + " nr of bad values. ");
 
            System.out.println("these are: " + badValues.toString());
+
+            InputStream file = Main.class.getClassLoader().getResourceAsStream("ecos_x86.dimacs");
+            Scanner scr = null;
+            scr = new Scanner(file);
+            int counter = 0;
+            while(scr.hasNext() && counter<badValues.size()){
+                if(badValues.contains(scr.next())) {
+                    System.out.println(scr.next());
+                    counter++;
+                }
+            }
+
 
 //HERE ENDS TASK B.2 --------------------------------------------------------------------------------------------------------
 
