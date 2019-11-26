@@ -1,16 +1,17 @@
+import org.sat4j.core.VecInt;
 import org.sat4j.minisat.SolverFactory;
 import org.sat4j.reader.DimacsReader;
 import org.sat4j.reader.InstanceReader;
 import org.sat4j.reader.ParseFormatException;
-import org.sat4j.specs.ContradictionException;
-import org.sat4j.specs.IProblem;
-import org.sat4j.specs.ISolver;
-import org.sat4j.specs.TimeoutException;
+import org.sat4j.specs.*;
 import org.sat4j.tools.ModelIterator;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.sat4j.reader.Reader;
 
 public class Main {
@@ -22,16 +23,40 @@ public class Main {
         PrintWriter out = new PrintWriter(System.out,true);
 
 
-        // filename is given on the command line
+// HERE STARTS TASK B.1 -----------------------------------------------------------------------------------------------------
         try {
             boolean unsat = true;
            IProblem problem = reader.parseInstance(Main.class.getClassLoader().getResourceAsStream("ecos_x86.dimacs"));
 
+           System.out.println("TASK B.1");
            if(problem.isSatisfiable()){
                System.out.println("Satisfiable");
            }else{
                System.out.println("Not satisfiable");
            }
+
+//HERE STARTS TASK B.2 -----------------------------------------------------------------------------------------------------------
+            List badValues = new ArrayList();
+           int numberOfBadValues = 0;
+
+           for (int i = 1; i <= 1255; i ++){
+                IProblem problemI = reader.parseInstance(Main.class.getClassLoader().getResourceAsStream("ecos_x86.dimacs"));
+                IVecInt vecInt = new VecInt(1);
+                vecInt.insertFirst(i);
+                boolean isSatisfiable = problemI.isSatisfiable(vecInt);
+                if (!isSatisfiable){
+                    numberOfBadValues ++;
+                    badValues.add(i);
+                }
+            }
+           System.out.println("TASK B.2");
+
+           System.out.println("we have: " + numberOfBadValues + " nr of bad values. ");
+
+           System.out.println("these are: " + badValues.toString());
+
+//HERE ENDS TASK B.2 --------------------------------------------------------------------------------------------------------
+
            /**
            while (problem.isSatisfiable()) {
                 unsat = false;
