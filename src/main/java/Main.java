@@ -52,68 +52,38 @@ public class Main {
            }
 
 //HERE STARTS TASK B.2 -----------------------------------------------------------------------------------------------------------
-            List deadFeatures = new ArrayList();
-           int numberOfDeadFeatures = 0;
+            List badValues = new ArrayList();
+           int numberOfBadValues = 0;
 
            for (int i = 1; i <= 1255; i ++){
+                IProblem problemI = reader.parseInstance(Main.class.getClassLoader().getResourceAsStream("ecos_x86.dimacs"));
                 IVecInt vecInt = new VecInt(1);
                 vecInt.insertFirst(i);
-                boolean isSatisfiable = problem.isSatisfiable(vecInt);
-
+                boolean isSatisfiable = problemI.isSatisfiable(vecInt);
                 if (!isSatisfiable){
-                    numberOfDeadFeatures ++;
-                    deadFeatures.add(Integer.toString(i));
+                    numberOfBadValues ++;
+                    badValues.add(Integer.toString(i));
                 }
             }
            System.out.println("TASK B.2");
 
-           System.out.println("we have: " + numberOfDeadFeatures + " nr of bad values. ");
+           System.out.println("we have: " + numberOfBadValues + " nr of bad values. ");
 
-           System.out.println("these are: " + deadFeatures.toString());
+           System.out.println("these are: " + badValues.toString());
 
             InputStream file = Main.class.getClassLoader().getResourceAsStream("ecos_x86.dimacs");
             Scanner scr = null;
             scr = new Scanner(file);
             int counter = 0;
-            while(scr.hasNext() && counter<deadFeatures.size()){
-                if(deadFeatures.contains(scr.next())) {
+            while(scr.hasNext() && counter<badValues.size()){
+                if(badValues.contains(scr.next())) {
                     System.out.println(scr.next());
                     counter++;
                 }
             }
 
 
-//HERE BEGINS TASK B.3 --------------------------------------------------------------------------------------------------------
-            IProblem problemMini = reader.parseInstance(Main.class.getClassLoader().getResourceAsStream("ecos_x86.dimacs"));
-            PrintWriter printWriter = new PrintWriter("outPrint.txt");
-
-            int numberOfDependencies = 0;
-            for (int j = 1; j <= 1255; j ++){
-
-                //List deadFeatures = new ArrayList();
-                System.out.println(j);
-                for (int i = 1; i <= 1255; i ++){
-                    if (i != j && !deadFeatures.contains(i)){
-                        IVecInt vecIntB = new VecInt(2);
-                        vecIntB.insertFirst(-j);
-                        vecIntB.insertFirst(i);
-
-                        boolean isSatisfiable = problemMini.isSatisfiable(vecIntB);
-
-                        if (!isSatisfiable){
-                            numberOfDependencies ++;
-                            printWriter.println(i + " is dependant on " + j);
-                            //deadFeatures.add(Integer.toString(i));
-                        }
-                    }
-                }
-            }
-
-            System.out.println("TASK B.3");
-
-            System.out.println("we have: " + numberOfDependencies + " nr of dependencies. ");
-
-
+//HERE ENDS TASK B.2 --------------------------------------------------------------------------------------------------------
 
            /**
            while (problem.isSatisfiable()) {
@@ -137,3 +107,4 @@ public class Main {
         }
     }
 }
+
