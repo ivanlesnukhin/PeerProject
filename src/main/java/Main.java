@@ -85,9 +85,8 @@ public class Main {
 
 //HERE BEGINS TASK B.3 --------------------------------------------------------------------------------------------------------
             IProblem problemMini = reader.parseInstance(Main.class.getClassLoader().getResourceAsStream("ecos_x86.dimacs"));
-            try (PrintWriter meh = new PrintWriter("outPrint.txt")) {
-                meh.println("hej");
-            }
+            BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/resources/outPrint.txt"));
+
             int numberOfDependencies = 0;
             for (int j = 1; j <= 1255; j ++){
 
@@ -102,10 +101,14 @@ public class Main {
 
                         if (!isSatisfiable){
                             numberOfDependencies ++;
+                            writer.write(i + " is dependant on " + j + "\n");
                         }
                     }
                 }
             }
+
+
+            writer.close();
 
             System.out.println("TASK B.3");
 
