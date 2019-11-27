@@ -6,12 +6,9 @@ import org.sat4j.reader.ParseFormatException;
 import org.sat4j.specs.*;
 import org.sat4j.tools.ModelIterator;
 
-<<<<<<< Updated upstream
 import java.io.FileNotFoundException;
 import java.io.IOException;
-=======
 import java.io.*;
->>>>>>> Stashed changes
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Map;
@@ -20,9 +17,7 @@ import java.util.List;
 
 import org.sat4j.reader.Reader;
 
-public class Main {
-<<<<<<< Updated upstream
-=======
+
     String filePath = "src/main/resources/ecos_x86.dimacs";
     /*
     public void printName(int num) {
@@ -80,8 +75,6 @@ public class Main {
 
             System.out.println("these are: " + badValues.toString());
 
-<<<<<<< Updated upstream
-=======
             InputStream file = Main.class.getClassLoader().getResourceAsStream("ecos_x86.dimacs");
             Scanner scr = new Scanner(file);
 
@@ -100,11 +93,7 @@ public class Main {
                 }
             }
 
-            List<String> implications = new ArrayList<>();
-            ISolver solver1 = SolverFactory.newDefault();
-            solver.setTimeout(3600); // 1 hour timeout
-            Reader reader1 = new DimacsReader(solver1);
-            IProblem problem1 = reader1.parseInstance(Main.class.getClassLoader().getResourceAsStream("ecos_x86.dimacs"));
+
 
             Map< Integer, String > map = getAllFeatures();
             System.out.println("MAPS:     " + map.toString());
@@ -114,7 +103,6 @@ public class Main {
             FileReader freader = new FileReader(filePath);
             BufferedReader breader = new BufferedReader(freader);
 
->>>>>>> Stashed changes
 //HERE ENDS TASK B.2 --------------------------------------------------------------------------------------------------------
 
            /**
@@ -137,6 +125,25 @@ public class Main {
         } catch (TimeoutException e) {
             System.out.println("Timeout, sorry!");
         }
+    }
+
+    static int implications(Map<Integer, String> features)
+    {
+
+        ISolver solver = SolverFactory.newDefault();
+        solver.setTimeout(3600); // 1 hour timeout
+        Reader reader = new DimacsReader(solver);
+        IProblem problem = reader.parseInstance(Main.class.getClassLoader().getResourceAsStream("ecos_x86.dimacs"));
+
+        int imp = 0;
+        List<String> l = new ArrayList<>();
+        IVecInt vecInt;
+        for(I : features.keySet())
+        {
+            vecInt = new VecInt();
+
+        }
+        return imp;
     }
 
     static Map< Integer, String > getAllFeatures() throws IOException{
