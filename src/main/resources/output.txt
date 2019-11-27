@@ -1,0 +1,7 @@
+TASK B.1
+Satisfiable
+TASK B.2
+We have: 5 nr of dead features. 
+These are: [40, 112, 119, 1151, 129]
+TASK B.3
+we have: 8141 nr of dependencies. 

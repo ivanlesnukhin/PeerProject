@@ -29,6 +29,7 @@ public class Main {
         }
     }
 */
+
     public static void main(String[] args) {
 
         ISolver solver = SolverFactory.newDefault();
@@ -39,19 +40,24 @@ public class Main {
 
 // HERE STARTS TASK B.1 -----------------------------------------------------------------------------------------------------
         try {
+            BufferedWriter outputWriter = new BufferedWriter(new FileWriter("src/main/resources/output.txt"));
+
             boolean unsat = true;
-           IProblem problem = reader.parseInstance(Main.class.getClassLoader().getResourceAsStream("ecos_x86.dimacs"));
+           IProblem problem = reader.parseInstance(Main.class.getClassLoader().getResourceAsStream("small.dimacs"));
 
            System.out.println("TASK B.1");
+            outputWriter.write("TASK B.1" + "\n");
            if(problem.isSatisfiable()){
                System.out.println("Satisfiable");
+               outputWriter.write("Satisfiable" + "\n");
            }else{
                System.out.println("Not satisfiable");
+               outputWriter.write("Not satisfiable" + "\n");
            }
 
 //HERE STARTS TASK B.2 -----------------------------------------------------------------------------------------------------------
 
-            InputStream file = Main.class.getClassLoader().getResourceAsStream("ecos_x86.dimacs");
+            InputStream file = Main.class.getClassLoader().getResourceAsStream("small.dimacs");
             Scanner scan = new Scanner(file);
             List <Integer> numbersinFile = new ArrayList<>();
             HashMap<Integer, String> hmap = new HashMap<Integer, String>();
@@ -82,24 +88,28 @@ public class Main {
                 }
             }
            System.out.println("TASK B.2");
+            outputWriter.write("TASK B.2" + "\n");
 
            System.out.println("We have: " + numberOfDeadFeatures + " nr of dead features. ");
+           outputWriter.write("We have: " + numberOfDeadFeatures + " nr of dead features. " + "\n");
 
            System.out.println("These are: " + deadFeatures.toString());
+            outputWriter.write("These are: " + deadFeatures.toString() + "\n");
 
             Scanner scr = new Scanner(file);
             int counter = 0;
             while(scr.hasNext() && counter<deadFeatures.size()){
                 if(deadFeatures.contains(scr.next())) {
                     System.out.println(scr.next());
+                    outputWriter.write(scr.next() + "\n");
                     counter++;
                 }
             }
 
 
-//HERE BEGINS TASK B.3 --------------------------------------------------------------------------------------------------------
+//HERE starts TASK B.3 --------------------------------------------------------------------------------------------------------
             IProblem problemMini = reader.parseInstance(Main.class.getClassLoader().getResourceAsStream("ecos_x86.dimacs"));
-            BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/resources/outPrint.txt"));
+            BufferedWriter implicationWriter = new BufferedWriter(new FileWriter("src/main/resources/implications.txt"));
 
             int numberOfDependencies = 0;
             for (Integer j : hash_Set){
@@ -113,19 +123,22 @@ public class Main {
 
                         if (!isSatisfiable){
                             numberOfDependencies ++;
-                            writer.write(i + " is dependant on " + j + "\n");
+                            implicationWriter.write(i + " is dependant on " + j + "\n");
                         }
                     }
                 }
             }
 
-
-            writer.close();
+            implicationWriter.close();
 
             System.out.println("TASK B.3");
+            outputWriter.write("TASK B.3" + "\n");
+
 
             System.out.println("we have: " + numberOfDependencies + " nr of dependencies. ");
+            outputWriter.write("we have: " + numberOfDependencies + " nr of dependencies. " + "\n");
 
+            outputWriter.close();
 
 
            /**
