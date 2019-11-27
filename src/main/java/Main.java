@@ -56,12 +56,12 @@ public class Main {
            }
 
 //HERE STARTS TASK B.2 -----------------------------------------------------------------------------------------------------------
-
             InputStream file = Main.class.getClassLoader().getResourceAsStream("small.dimacs");
             Scanner scan = new Scanner(file);
             List <Integer> numbersinFile = new ArrayList<>();
             HashMap<Integer, String> hmap = new HashMap<Integer, String>();
             Set<Integer> hash_Set  = new HashSet<Integer>();
+            List <String> deadFeatureNames = new ArrayList<>();
 
             while(scan.hasNextLine()){
                 String str = scan.nextLine();
@@ -75,9 +75,9 @@ public class Main {
             hash_Set = hmap.keySet();
 
             List deadFeatures = new ArrayList();
-           int numberOfDeadFeatures = 0;
+            int numberOfDeadFeatures = 0;
 
-           for (Integer i : hash_Set){
+            for (Integer i : hash_Set){
                 IVecInt vecInt = new VecInt(1);
                 vecInt.insertFirst(i);
                 boolean isSatisfiable = problem.isSatisfiable(vecInt);
@@ -85,26 +85,35 @@ public class Main {
                 if (!isSatisfiable){
                     numberOfDeadFeatures ++;
                     deadFeatures.add(Integer.toString(i));
+                    deadFeatureNames.add(hmap.get(i));
                 }
+
             }
-           System.out.println("TASK B.2");
+
+            System.out.println("TASK B.2");
             outputWriter.write("TASK B.2" + "\n");
 
-           System.out.println("We have: " + numberOfDeadFeatures + " nr of dead features. ");
-           outputWriter.write("We have: " + numberOfDeadFeatures + " nr of dead features. " + "\n");
+            System.out.println("The names of the dead features are: ");
+            outputWriter.write("The names of the dead features are: " + "\n");
 
-           System.out.println("These are: " + deadFeatures.toString());
-            outputWriter.write("These are: " + deadFeatures.toString() + "\n");
+            for (String s: deadFeatureNames){
+                System.out.println(s);
+            }
+
+            System.out.println("We have: " + numberOfDeadFeatures + " nr of dead features. ");
+            System.out.println("We have: " + numberOfDeadFeatures + " nr of dead features. " + "\n");
 
             Scanner scr = new Scanner(file);
             int counter = 0;
             while(scr.hasNext() && counter<deadFeatures.size()){
                 if(deadFeatures.contains(scr.next())) {
                     System.out.println(scr.next());
-                    outputWriter.write(scr.next() + "\n");
+                    System.out.println(scr.next() + "\n");
                     counter++;
                 }
             }
+            
+
 
 
 //HERE starts TASK B.3 --------------------------------------------------------------------------------------------------------
