@@ -1,0 +1,2 @@
+TASK B.3
+we have: 8141 nr of dependencies. 

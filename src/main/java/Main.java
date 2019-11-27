@@ -1,36 +1,16 @@
 import org.sat4j.core.VecInt;
 import org.sat4j.minisat.SolverFactory;
 import org.sat4j.reader.DimacsReader;
-import org.sat4j.reader.InstanceReader;
 import org.sat4j.reader.ParseFormatException;
 import org.sat4j.specs.*;
-import org.sat4j.tools.ModelIterator;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.*;
 
 import org.sat4j.reader.Reader;
 
 public class Main {
 
-    /*
-    public void printName(int num) {
-        File file = new File("/src/main/java/Main/ecos_x86.dimacs");
-        Scanner scr = null;
-        try {
-            scr = new Scanner(file);
-            while(scr.hasNext()){
-                System.out.println("line : "+scr.next());
-            }
-        } catch (FileNotFoundException ex) {
-            System.out.println("F");
-        }
-    }
-*/
     public static void main(String[] args) {
 
         ISolver solver = SolverFactory.newDefault();
@@ -41,59 +21,106 @@ public class Main {
 
 // HERE STARTS TASK B.1 -----------------------------------------------------------------------------------------------------
         try {
-            boolean unsat = true;
-           IProblem problem = reader.parseInstance(Main.class.getClassLoader().getResourceAsStream("ecos_x86.dimacs"));
+            BufferedWriter outputWriter = new BufferedWriter(new FileWriter("src/main/resources/output.txt"));
+            IProblem problem = reader.parseInstance(Main.class.getClassLoader().getResourceAsStream("small.dimacs"));
 
-           System.out.println("TASK B.1");
-           if(problem.isSatisfiable()){
+            System.out.println("TASK B.1");
+            outputWriter.write("TASK B.1" + "\n");
+            if(problem.isSatisfiable()){
                System.out.println("Satisfiable");
-           }else{
+               outputWriter.write("Satisfiable" + "\n");
+            }else{
                System.out.println("Not satisfiable");
-           }
+               outputWriter.write("Not satisfiable" + "\n");
+            }
 
 //HERE STARTS TASK B.2 -----------------------------------------------------------------------------------------------------------
-            List badValues = new ArrayList();
-           int numberOfBadValues = 0;
+            InputStream file = Main.class.getClassLoader().getResourceAsStream("small.dimacs");
+            Scanner scan = new Scanner(file);
+            List <Integer> numbersinFile = new ArrayList<>();
+            HashMap<Integer, String> hmap = new HashMap<Integer, String>();
+            Set<Integer> hash_Set  = new HashSet<Integer>();
+            List <String> deadFeatureNames = new ArrayList<>();
 
-           for (int i = 1; i <= 1255; i ++){
-                IProblem problemI = reader.parseInstance(Main.class.getClassLoader().getResourceAsStream("ecos_x86.dimacs"));
-                IVecInt vecInt = new VecInt(1);
-                vecInt.insertFirst(i);
-                boolean isSatisfiable = problemI.isSatisfiable(vecInt);
-                if (!isSatisfiable){
-                    numberOfBadValues ++;
-                    badValues.add(Integer.toString(i));
+            while(scan.hasNextLine()){
+                String str = scan.nextLine();
+                if (str.startsWith("c")){
+                    String[] strArr = str.split(" ");
+                    hmap.put(Integer.parseInt(strArr[1]), strArr[2]);
                 }
             }
-           System.out.println("TASK B.2");
 
-           System.out.println("we have: " + numberOfBadValues + " nr of bad values. ");
+            hash_Set = hmap.keySet();
 
-           System.out.println("these are: " + badValues.toString());
+            List deadFeatures = new ArrayList();
+            int numberOfDeadFeatures = 0;
 
-            InputStream file = Main.class.getClassLoader().getResourceAsStream("ecos_x86.dimacs");
-            Scanner scr = null;
-            scr = new Scanner(file);
+            for (Integer i : hash_Set){
+                IVecInt vecInt = new VecInt(1);
+                vecInt.insertFirst(i);
+                boolean isSatisfiable = problem.isSatisfiable(vecInt);
+                if (!isSatisfiable){
+                    numberOfDeadFeatures ++;
+                    deadFeatures.add(Integer.toString(i));
+                    deadFeatureNames.add(hmap.get(i));
+                }
+            }
+
+
+            System.out.println("TASK B.2");
+            outputWriter.write("TASK B.2" + "\n");
+
+            System.out.println("We have: " + numberOfDeadFeatures + " nr of dead features. ");
+            outputWriter.write("We have: " + numberOfDeadFeatures + " nr of dead features. " + "\n");
+
+            System.out.println("The names of the dead features are: ");
+            outputWriter.write("The names of the dead features are: " + "\n");
+
+            for (String s: deadFeatureNames){
+                System.out.println(s);
+                outputWriter.write(s + "\n");
+            }
+
+            Scanner scr = new Scanner(file);
             int counter = 0;
-            while(scr.hasNext() && counter<badValues.size()){
-                if(badValues.contains(scr.next())) {
+            while(scr.hasNext() && counter<deadFeatures.size()){
+                if(deadFeatures.contains(scr.next())) {
                     System.out.println(scr.next());
+                    outputWriter.write(scr.next() + "\n");
                     counter++;
                 }
             }
 
+//HERE starts TASK B.3 --------------------------------------------------------------------------------------------------------
+            IProblem problemMini = reader.parseInstance(Main.class.getClassLoader().getResourceAsStream("ecos_x86.dimacs"));
+            BufferedWriter implicationWriter = new BufferedWriter(new FileWriter("src/main/resources/implications.txt"));
 
-//HERE ENDS TASK B.2 --------------------------------------------------------------------------------------------------------
+            int numberOfDependencies = 0;
+            for (Integer j : hash_Set){
+                for (Integer i : hash_Set){
+                    if (i != j && !deadFeatures.contains(String.valueOf(i)) && !deadFeatures.contains(String.valueOf(j))){
+                        IVecInt vecIntB = new VecInt(2);
+                        vecIntB.insertFirst(-j);
+                        vecIntB.insertFirst(i);
 
-           /**
-           while (problem.isSatisfiable()) {
-                unsat = false;
-                int [] model = problem.model();
-                System.out.println("Satisfiable");
+                        boolean isSatisfiable = problemMini.isSatisfiable(vecIntB);
+
+                        if (!isSatisfiable){
+                            numberOfDependencies ++;
+                            implicationWriter.write(i + " is dependant on " + j + "\n");
+                        }
+                    }
+                }
             }
-            */
-            //if (unsat)
-                //System.out.println("Non satisfiable");
+            implicationWriter.close();
+
+            System.out.println("TASK B.3");
+            outputWriter.write("TASK B.3" + "\n");
+
+            System.out.println("we have: " + numberOfDependencies + " nr of dependencies. ");
+            outputWriter.write("we have: " + numberOfDependencies + " nr of dependencies. " + "\n");
+            outputWriter.close();
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (ParseFormatException e) {

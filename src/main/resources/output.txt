@@ -1,0 +1,12 @@
+TASK B.1
+Satisfiable
+TASK B.2
+We have: 5 nr of dead features. 
+The names of the dead features are: 
+USE_TRACING
+CYGSEM_IO_ETH_DRIVERS_WARN
+IO_ETH_DRIVERS_LWIP
+REDBOOT_HAL_OPTIONS
+BUILD_REDBOOT_BIN_FLOPPY
+TASK B.3
+we have: 8141 nr of dependencies. 
