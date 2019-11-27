@@ -27,11 +27,11 @@ public class Main {
             System.out.println("TASK B.1");
             outputWriter.write("TASK B.1" + "\n");
             if(problem.isSatisfiable()){
-               System.out.println("Satisfiable");
-               outputWriter.write("Satisfiable" + "\n");
+                System.out.println("Satisfiable");
+                outputWriter.write("Satisfiable" + "\n");
             }else{
-               System.out.println("Not satisfiable");
-               outputWriter.write("Not satisfiable" + "\n");
+                System.out.println("Not satisfiable");
+                outputWriter.write("Not satisfiable" + "\n");
             }
 
 //HERE STARTS TASK B.2 -----------------------------------------------------------------------------------------------------------
@@ -59,13 +59,13 @@ public class Main {
                 IVecInt vecInt = new VecInt(1);
                 vecInt.insertFirst(i);
                 boolean isSatisfiable = problem.isSatisfiable(vecInt);
+
                 if (!isSatisfiable){
                     numberOfDeadFeatures ++;
                     deadFeatures.add(Integer.toString(i));
                     deadFeatureNames.add(hmap.get(i));
                 }
             }
-
 
             System.out.println("TASK B.2");
             outputWriter.write("TASK B.2" + "\n");
@@ -134,4 +134,3 @@ public class Main {
         }
     }
 }
-
