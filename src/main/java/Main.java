@@ -7,9 +7,7 @@ import org.sat4j.specs.*;
 import org.sat4j.tools.ModelIterator;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -52,10 +50,28 @@ public class Main {
            }
 
 //HERE STARTS TASK B.2 -----------------------------------------------------------------------------------------------------------
+
+            InputStream file = Main.class.getClassLoader().getResourceAsStream("ecos_x86.dimacs");
+            Scanner scan = new Scanner(file);
+            List <Integer> numbersinFile = new ArrayList<>();
+            HashMap<Integer, String> hmap = new HashMap<Integer, String>();
+            Set<Integer> hash_Set  = new HashSet<Integer>();
+
+            while(scan.hasNextLine()){
+                String str = scan.nextLine();
+                if (str.startsWith("c")){
+                    String[] strArr = str.split(" ");
+                    hmap.put(Integer.parseInt(strArr[1]), strArr[2]);
+                    //System.out.println(hmap.get(Integer.parseInt(strArr[1])));
+                }
+            }
+
+            hash_Set = hmap.keySet();
+
             List deadFeatures = new ArrayList();
            int numberOfDeadFeatures = 0;
 
-           for (int i = 1; i <= 1255; i ++){
+           for (Integer i : hash_Set){
                 IVecInt vecInt = new VecInt(1);
                 vecInt.insertFirst(i);
                 boolean isSatisfiable = problem.isSatisfiable(vecInt);
@@ -67,13 +83,11 @@ public class Main {
             }
            System.out.println("TASK B.2");
 
-           System.out.println("we have: " + numberOfDeadFeatures + " nr of bad values. ");
+           System.out.println("We have: " + numberOfDeadFeatures + " nr of dead features. ");
 
-           System.out.println("these are: " + deadFeatures.toString());
+           System.out.println("These are: " + deadFeatures.toString());
 
-            InputStream file = Main.class.getClassLoader().getResourceAsStream("ecos_x86.dimacs");
-            Scanner scr = null;
-            scr = new Scanner(file);
+            Scanner scr = new Scanner(file);
             int counter = 0;
             while(scr.hasNext() && counter<deadFeatures.size()){
                 if(deadFeatures.contains(scr.next())) {
@@ -88,11 +102,9 @@ public class Main {
             BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/resources/outPrint.txt"));
 
             int numberOfDependencies = 0;
-            for (int j = 1; j <= 1255; j ++){
-
-                System.out.println(j);
-                for (int i = 1; i <= 1255; i ++){
-                    if (i != j && !deadFeatures.contains(i)){
+            for (Integer j : hash_Set){
+                for (Integer i : hash_Set){
+                    if (i != j && !deadFeatures.contains(String.valueOf(i)) && !deadFeatures.contains(String.valueOf(j))){
                         IVecInt vecIntB = new VecInt(2);
                         vecIntB.insertFirst(-j);
                         vecIntB.insertFirst(i);
