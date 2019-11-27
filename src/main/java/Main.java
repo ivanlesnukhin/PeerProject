@@ -1,34 +1,15 @@
 import org.sat4j.core.VecInt;
 import org.sat4j.minisat.SolverFactory;
 import org.sat4j.reader.DimacsReader;
-import org.sat4j.reader.InstanceReader;
 import org.sat4j.reader.ParseFormatException;
 import org.sat4j.specs.*;
-import org.sat4j.tools.ModelIterator;
 
 import java.io.*;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.sat4j.reader.Reader;
 
 public class Main {
-
-    /*
-    public void printName(int num) {
-        File file = new File("/src/main/java/Main/ecos_x86.dimacs");
-        Scanner scr = null;
-        try {
-            scr = new Scanner(file);
-            while(scr.hasNext()){
-                System.out.println("line : "+scr.next());
-            }
-        } catch (FileNotFoundException ex) {
-            System.out.println("F");
-        }
-    }
-*/
 
     public static void main(String[] args) {
 
@@ -41,19 +22,17 @@ public class Main {
 // HERE STARTS TASK B.1 -----------------------------------------------------------------------------------------------------
         try {
             BufferedWriter outputWriter = new BufferedWriter(new FileWriter("src/main/resources/output.txt"));
+            IProblem problem = reader.parseInstance(Main.class.getClassLoader().getResourceAsStream("small.dimacs"));
 
-            boolean unsat = true;
-           IProblem problem = reader.parseInstance(Main.class.getClassLoader().getResourceAsStream("small.dimacs"));
-
-           System.out.println("TASK B.1");
+            System.out.println("TASK B.1");
             outputWriter.write("TASK B.1" + "\n");
-           if(problem.isSatisfiable()){
+            if(problem.isSatisfiable()){
                System.out.println("Satisfiable");
                outputWriter.write("Satisfiable" + "\n");
-           }else{
+            }else{
                System.out.println("Not satisfiable");
                outputWriter.write("Not satisfiable" + "\n");
-           }
+            }
 
 //HERE STARTS TASK B.2 -----------------------------------------------------------------------------------------------------------
             InputStream file = Main.class.getClassLoader().getResourceAsStream("small.dimacs");
@@ -68,7 +47,6 @@ public class Main {
                 if (str.startsWith("c")){
                     String[] strArr = str.split(" ");
                     hmap.put(Integer.parseInt(strArr[1]), strArr[2]);
-                    //System.out.println(hmap.get(Integer.parseInt(strArr[1])));
                 }
             }
 
@@ -87,34 +65,31 @@ public class Main {
                     deadFeatures.add(Integer.toString(i));
                     deadFeatureNames.add(hmap.get(i));
                 }
-
             }
 
             System.out.println("TASK B.2");
             outputWriter.write("TASK B.2" + "\n");
+
+            System.out.println("We have: " + numberOfDeadFeatures + " nr of dead features. ");
+            outputWriter.write("We have: " + numberOfDeadFeatures + " nr of dead features. " + "\n");
 
             System.out.println("The names of the dead features are: ");
             outputWriter.write("The names of the dead features are: " + "\n");
 
             for (String s: deadFeatureNames){
                 System.out.println(s);
+                outputWriter.write(s + "\n");
             }
-
-            System.out.println("We have: " + numberOfDeadFeatures + " nr of dead features. ");
-            System.out.println("We have: " + numberOfDeadFeatures + " nr of dead features. " + "\n");
 
             Scanner scr = new Scanner(file);
             int counter = 0;
             while(scr.hasNext() && counter<deadFeatures.size()){
                 if(deadFeatures.contains(scr.next())) {
                     System.out.println(scr.next());
-                    System.out.println(scr.next() + "\n");
+                    outputWriter.write(scr.next() + "\n");
                     counter++;
                 }
             }
-            
-
-
 
 //HERE starts TASK B.3 --------------------------------------------------------------------------------------------------------
             IProblem problemMini = reader.parseInstance(Main.class.getClassLoader().getResourceAsStream("ecos_x86.dimacs"));
@@ -137,28 +112,15 @@ public class Main {
                     }
                 }
             }
-
             implicationWriter.close();
 
             System.out.println("TASK B.3");
             outputWriter.write("TASK B.3" + "\n");
 
-
             System.out.println("we have: " + numberOfDependencies + " nr of dependencies. ");
             outputWriter.write("we have: " + numberOfDependencies + " nr of dependencies. " + "\n");
-
             outputWriter.close();
 
-
-           /**
-           while (problem.isSatisfiable()) {
-                unsat = false;
-                int [] model = problem.model();
-                System.out.println("Satisfiable");
-            }
-            */
-            //if (unsat)
-                //System.out.println("Non satisfiable");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (ParseFormatException e) {
