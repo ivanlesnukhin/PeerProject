@@ -22,7 +22,7 @@ public class Main {
 // HERE STARTS TASK B.1 -----------------------------------------------------------------------------------------------------
         try {
             BufferedWriter outputWriter = new BufferedWriter(new FileWriter("src/main/resources/output.txt"));
-            IProblem problem = reader.parseInstance(Main.class.getClassLoader().getResourceAsStream("small.dimacs"));
+            IProblem problem = reader.parseInstance(Main.class.getClassLoader().getResourceAsStream("ecos_x86.dimacs"));
 
             System.out.println("TASK B.1");
             outputWriter.write("TASK B.1" + "\n");
@@ -35,7 +35,7 @@ public class Main {
             }
 
 //HERE STARTS TASK B.2 -----------------------------------------------------------------------------------------------------------
-            InputStream file = Main.class.getClassLoader().getResourceAsStream("small.dimacs");
+            InputStream file = Main.class.getClassLoader().getResourceAsStream("ecos_x86.dimacs");
             Scanner scan = new Scanner(file);
             List <Integer> numbersinFile = new ArrayList<>();
             HashMap<Integer, String> hmap = new HashMap<Integer, String>();
