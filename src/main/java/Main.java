@@ -85,12 +85,12 @@ public class Main {
 
 //HERE BEGINS TASK B.3 --------------------------------------------------------------------------------------------------------
             IProblem problemMini = reader.parseInstance(Main.class.getClassLoader().getResourceAsStream("ecos_x86.dimacs"));
-            PrintWriter printWriter = new PrintWriter("outPrint.txt");
-
+            try (PrintWriter meh = new PrintWriter("outPrint.txt")) {
+                meh.println("hej");
+            }
             int numberOfDependencies = 0;
             for (int j = 1; j <= 1255; j ++){
 
-                //List deadFeatures = new ArrayList();
                 System.out.println(j);
                 for (int i = 1; i <= 1255; i ++){
                     if (i != j && !deadFeatures.contains(i)){
@@ -102,8 +102,6 @@ public class Main {
 
                         if (!isSatisfiable){
                             numberOfDependencies ++;
-                            printWriter.println(i + " is dependant on " + j);
-                            //deadFeatures.add(Integer.toString(i));
                         }
                     }
                 }
