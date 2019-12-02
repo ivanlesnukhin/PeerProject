@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="showhiddenfeatures" value="true"/>
+		<graphics key="legendposition" value="585,264"/>
+		<graphics key="legendautolayout" value="false"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="vertical"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="4"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Name">
+			<graphics key="collapsed" value="false"/>
+			<alt abstract="true" name="Dodging">
+				<feature name="WaveSurfing"/>
+				<feature name="Stop_n_Go"/>
+				<feature name="Bullet_Simulation"/>
+				<feature name="Random_Dir"/>
+				<feature name="Chng_Dir_after_shot"/>
+				<feature name="Rev_or_Not"/>
+			</alt>
+			<alt abstract="true" name="Movement">
+				<feature name="Random"/>
+				<feature name="Search"/>
+				<feature name="Oscillator"/>
+				<feature name="Ramming"/>
+				<feature name="Angle_Based"/>
+				<feature name="Antigravity"/>
+				<feature name="Back_n_Forth"/>
+			</alt>
+			<alt abstract="true" name="Firing">
+				<feature name="GF"/>
+				<feature name="Linear_Target"/>
+				<feature name="Head_On_Target"/>
+				<feature name="PatternMatch"/>
+				<feature name="Circular_Target"/>
+				<feature name="Shoot_EBullets"/>
+			</alt>
+			<or abstract="true" name="Data_Storage">
+				<feature name="Symbolic_State"/>
+				<feature name="Mvm_Effect"/>
+				<feature name="Hit_Rate"/>
+				<feature name="Dyn_Dis"/>
+				<feature name="Miss_Rate"/>
+				<feature name="GFactor"/>
+				<feature name="Virtual_Gun_Rating"/>
+				<feature name="Target_Data"/>
+				<feature name="Surfing"/>
+				<feature name="Bearings"/>
+				<feature name="Aim_Factors"/>
+				<feature name="Lateral_Vel"/>
+				<feature name="Mode_Effect"/>
+			</or>
+			<alt abstract="true" name="Melee">
+				<feature name="Target_Closest"/>
+				<feature name="Gravity_Center_Arena"/>
+			</alt>
+		</and>
+	</struct>
+</featureModel>

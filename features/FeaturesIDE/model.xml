@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="showhiddenfeatures" value="true"/>
+		<graphics key="legendposition" value="585,264"/>
+		<graphics key="legendautolayout" value="false"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Name">
+			<graphics key="collapsed" value="false"/>
+			<alt abstract="true" name="Dodging">
+				<or name="WaveSurfing">
+					<feature name="Distancing"/>
+					<feature name="Dive_Protection"/>
+					<feature name="Segmentation"/>
+					<feature name="Absolute_Velocity"/>
+					<feature name="Wall_Proximity"/>
+					<feature name="Dynamic_Clustering"/>
+					<feature name="Acceleration"/>
+					<feature name="TrueSurfing"/>
+					<feature name="GoToSurfing"/>
+					<feature name="Hybrid"/>
+				</or>
+				<feature name="Stop_n_Go"/>
+				<feature name="Orbit_Enemy"/>
+				<feature name="Bullet_Simulation"/>
+				<feature name="Random_D"/>
+				<feature name="Chng_Dir_after_shot"/>
+				<feature name="Rev_or_Not"/>
+			</alt>
+			<alt abstract="true" name="Movement">
+				<feature name="Circular"/>
+				<alt name="Random">
+					<feature name="Around_Enemy"/>
+					<feature name="Smooth"/>
+				</alt>
+				<feature name="Fluid"/>
+				<feature name="Search"/>
+				<feature name="Orbit"/>
+				<feature name="No_Reverse"/>
+				<alt name="Oscillator">
+					<feature name="Aggressive"/>
+					<feature name="Double"/>
+				</alt>
+				<feature name="Angle_Based"/>
+				<feature name="Back_n_Forth"/>
+				<feature name="Musashi_Trick"/>
+				<alt abstract="true" name="Enemy_Based">
+					<feature name="Antigravity"/>
+					<feature name="Ramming"/>
+					<alt name="Enemy_Dependent">
+						<feature name="Single"/>
+						<feature name="Multiple"/>
+					</alt>
+				</alt>
+			</alt>
+			<alt abstract="true" name="Firing">
+				<alt name="GF">
+					<feature name="T_vel_chng"/>
+					<feature name="Abs_ltr_vel"/>
+					<feature name="WallProx"/>
+					<feature name="Dist_last_ticks"/>
+					<feature name="DynClust"/>
+				</alt>
+				<feature name="Linear_Target"/>
+				<feature name="Head_On_Target"/>
+				<feature name="PlayForward"/>
+				<alt name="PatternMatch">
+					<feature name="Regular"/>
+					<feature name="Symbolic"/>
+				</alt>
+				<feature name="Circular_Target"/>
+				<feature name="Shoot_EBullets"/>
+			</alt>
+			<or abstract="true" name="Data_Storage">
+				<or name="Data_Analysis">
+					<feature name="Average_Bearing_Target"/>
+					<feature name="MicroWave"/>
+					<feature name="Shot_Prediction"/>
+				</or>
+				<or name="Between_Matches">
+					<feature name="Symbolic_State"/>
+					<feature name="Mvm_Effect"/>
+					<feature name="Hit_Rate"/>
+					<feature name="Dyn_Dis"/>
+					<feature name="Miss_Rate"/>
+					<feature name="GFactor"/>
+					<feature name="Virtual_Gun_Rating"/>
+				</or>
+				<or name="Between_Rounds">
+					<feature name="Target_Data"/>
+					<feature name="Surfing"/>
+					<feature name="Symbolic_Statex"/>
+					<feature name="Mvm_Effectx"/>
+					<feature name="Hit_Ratex"/>
+					<feature name="Dyn_Disx"/>
+					<feature name="Miss_Ratex"/>
+					<feature name="GFactorx"/>
+					<feature name="Virtual_Gun_Ratingx"/>
+					<feature name="Bearings"/>
+					<feature name="Aim_Factors"/>
+					<feature name="Lateral_Vel"/>
+					<feature name="Mode_Effect"/>
+				</or>
+			</or>
+			<or abstract="true" name="Melee">
+				<feature name="Target_Closest"/>
+				<feature name="Gravity_Center_Arena"/>
+			</or>
+		</and>
+	</struct>
+</featureModel>
