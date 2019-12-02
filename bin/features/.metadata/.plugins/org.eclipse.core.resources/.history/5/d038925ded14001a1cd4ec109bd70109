@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="showhiddenfeatures" value="true"/>
+		<graphics key="legendposition" value="341,9"/>
+		<graphics key="legendautolayout" value="false"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="vertical"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="4"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Name">
+			<graphics key="collapsed" value="false"/>
+			<and abstract="true" name="Dodging">
+				<feature name="WaveSurfing"/>
+			</and>
+			<and abstract="true" name="Movement">
+				<feature name="Random"/>
+			</and>
+			<and abstract="true" name="Firing">
+				<feature name="GF"/>
+			</and>
+		</and>
+	</struct>
+</featureModel>
