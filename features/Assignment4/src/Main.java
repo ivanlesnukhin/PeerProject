@@ -31,6 +31,7 @@ public class BasicGFSurfer extends AdvancedRobot {
 	
 	private static double lateralDirection;
 	private static double lastEnemyVelocity;
+	boolean guessFactor = false, doubleBulletPower = false, waveSurfing = false, wallSmoothing = false, randomMovement = false; 
 
     // We must keep track of the enemy's energy level to detect EnergyDrop,
     // indicating a bullet is fired
@@ -46,18 +47,32 @@ public class BasicGFSurfer extends AdvancedRobot {
     public static double WALL_STICK = 160;
 
     public void run() {
-    	
-    	 //#if WaveSurfing
-		System.out.print("Hello");
-	      //#endif
+    	/*
+    	//#if WaveSurfing
+			System.out.print("Hello");
+			waveSurfing = true;
+		//#endif
 	   
-	      //#if Random
-		System.out.print(" beautiful");
-	      //#endif
+		//#if Random
+			System.out.print(" beautiful");
+			randomMovement = true;
+		//#endif
 	   
-	      //#if GF
-  		System.out.print(" wonderful"); 
-	      //#endif
+		//#if GF
+			System.out.print(" wonderful"); 
+			guessFactor = true;
+		//#endif
+  		
+  		//#if Wall_Smoothing
+			System.out.print(" wonderful"); 
+			wallSmoothing = true;
+		//#endif
+  		
+		//#if DBL_Bullet_Power
+			System.out.print(" wonderful"); 
+			doubleBulletPower = true;
+  		//#endif
+    	*/
     	
 		setColors(Color.BLUE, Color.BLACK, Color.YELLOW);
 		lateralDirection = 1;
