@@ -15,5 +15,8 @@ public class Main {
 //@  		System.out.print(" wonderful"); 
 	      //#endif
 	   
+	      //#if World
+//@  		System.out.print(" world!");
+	      //#endif
 	   }
 }

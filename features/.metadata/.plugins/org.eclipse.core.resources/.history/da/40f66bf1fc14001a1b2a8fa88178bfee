@@ -11,9 +11,12 @@ public class Main {
 //@		System.out.print(" beautiful");
 	      //#endif
 	   
-	      //#if GF
+	      //#if Firing
 //@  		System.out.print(" wonderful"); 
 	      //#endif
 	   
+	      //#if World
+//@  		System.out.print(" world!");
+	      //#endif
 	   }
 }

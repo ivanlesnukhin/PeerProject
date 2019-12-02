@@ -3,17 +3,20 @@
  */
 public class Main {
 	public static void main(String[] args){
-	      //#if WaveSurfing
+	      //#if Dodging
 //@		System.out.print("Hello");
 	      //#endif
 	   
-	      //#if Random
+	      //#if Beautiful
 //@		System.out.print(" beautiful");
 	      //#endif
 	   
-	      //#if GF
+	      //#if Wonderful
 //@  		System.out.print(" wonderful"); 
 	      //#endif
 	   
+	      //#if World
+//@  		System.out.print(" world!");
+	      //#endif
 	   }
 }
