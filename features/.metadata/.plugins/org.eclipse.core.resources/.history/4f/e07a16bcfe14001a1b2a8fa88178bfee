@@ -4,7 +4,7 @@
 public class Main {
 	public static void main(String[] args){
 	      //#if WaveSurfing
-//@		System.out.print("WaveSurfing");
+		System.out.print("WaveSurfing");
 	      //#endif
 	   
 	      //#if Random

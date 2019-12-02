@@ -1,0 +1,2 @@
+true
+Wall_Smoothing=NO_COLOR

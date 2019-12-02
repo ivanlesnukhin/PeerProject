@@ -4,18 +4,16 @@
 public class Main {
 	public static void main(String[] args){
 	      //#if WaveSurfing
-//@		System.out.print("WaveSurfing");
+		System.out.print("Hello");
 	      //#endif
 	   
 	      //#if Random
-//@		System.out.print(" Random");
+		System.out.print(" beautiful");
 	      //#endif
 	   
 	      //#if GF
-  		System.out.print(" GF"); 
+  		System.out.print(" wonderful"); 
 	      //#endif
 	   
-  		
-  		
 	   }
 }

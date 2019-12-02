@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration>
 	<feature automatic="selected" name="Name"/>
-	<feature name="Dodging"/>
-	<feature name="WaveSurfing"/>
-	<feature name="Wall_Smoothing"/>
+	<feature automatic="selected" manual="selected" name="Dodging"/>
+	<feature automatic="selected" name="WaveSurfing"/>
+	<feature manual="selected" name="Wall_Smoothing"/>
 	<feature name="Movement"/>
 	<feature name="Random"/>
 	<feature automatic="selected" manual="selected" name="Firing"/>
