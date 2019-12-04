@@ -88,7 +88,16 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
   		//#endif
     	*/
     	
-		setColors(Color.BLUE, Color.BLACK, Color.YELLOW);
+    	//#if BBY
+//@		setColors(Color.BLUE, Color.BLACK, Color.YELLOW);
+		//#endif
+    	//#if RBY
+//@		setColors(Color.RED, Color.BLACK, Color.WHITE);
+		//#endif
+    	//#if GWY
+//@		setColors(Color.GREEN, Color.WHITE, Color.YELLOW);
+		//#endif
+		
 		lateralDirection = 1;
 		lastEnemyVelocity = 0;
 		
