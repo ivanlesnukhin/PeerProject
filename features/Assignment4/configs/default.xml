@@ -10,8 +10,8 @@
 	<feature automatic="selected" manual="selected" name="Firing"/>
 	<feature automatic="selected" name="GF"/>
 	<feature manual="selected" name="DBL_Bullet_Power"/>
-	<feature name="Color"/>
-	<feature name="BBY"/>
-	<feature name="RBY"/>
-	<feature name="GWY"/>
+	<feature automatic="selected" manual="selected" name="Color"/>
+	<feature automatic="unselected" name="BBY"/>
+	<feature manual="selected" name="RBY"/>
+	<feature automatic="unselected" name="GWY"/>
 </configuration>

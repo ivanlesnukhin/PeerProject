@@ -27,9 +27,8 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
     public ArrayList _surfDirections;
     public ArrayList _surfAbsBearings;
     
-    //#if DBL_Bullet_Power
-	private static final double BULLET_POWER = 1.9;
-	//#endif
+    private static double BULLET_POWER = 1.0;
+
 	
 	private static double lateralDirection;
 	private static double lastEnemyVelocity;
@@ -79,10 +78,14 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 //@		setColors(Color.BLUE, Color.BLACK, Color.YELLOW);
 		//#endif
     	//#if RBY
-//@		setColors(Color.RED, Color.BLACK, Color.WHITE);
+		setColors(Color.RED, Color.BLACK, Color.WHITE);
 		//#endif
     	//#if GWY
 //@		setColors(Color.GREEN, Color.WHITE, Color.YELLOW);
+		//#endif
+		
+	    //#if DBL_Bullet_Power
+		BULLET_POWER = 1.9;
 		//#endif
 		
 		lateralDirection = 1;
