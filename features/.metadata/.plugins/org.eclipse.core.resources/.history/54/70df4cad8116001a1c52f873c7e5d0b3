@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration>
 	<feature automatic="selected" name="Name"/>
-	<feature name="Dodging"/>
-	<feature name="WaveSurfing"/>
+	<feature manual="selected" name="Dodging"/>
+	<feature automatic="selected" name="WaveSurfing"/>
 	<feature name="Wall_Smoothing"/>
 	<feature name="visibleEnemyWaves"/>
-	<feature automatic="selected" manual="selected" name="Movement"/>
-	<feature manual="selected" name="Random"/>
+	<feature name="Movement"/>
+	<feature name="Random"/>
 	<feature manual="selected" name="Firing"/>
 	<feature automatic="selected" name="GF"/>
 	<feature name="DBL_Bullet_Power"/>
 	<feature automatic="selected" manual="selected" name="Color"/>
 	<feature automatic="unselected" name="BBY"/>
-	<feature automatic="unselected" name="RBY"/>
-	<feature manual="selected" name="GWY"/>
+	<feature manual="selected" name="RBY"/>
+	<feature automatic="unselected" name="GWY"/>
 </configuration>
