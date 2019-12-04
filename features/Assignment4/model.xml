@@ -15,7 +15,7 @@
 			<graphics key="collapsed" value="false"/>
 			<and abstract="true" name="Dodging">
 				<and mandatory="true" name="WaveSurfing">
-					<feature name="Wall_Smoothing"/>
+					<feature mandatory="true" name="Wall_Smoothing"/>
 					<feature name="visibleEnemyWaves"/>
 				</and>
 			</and>
