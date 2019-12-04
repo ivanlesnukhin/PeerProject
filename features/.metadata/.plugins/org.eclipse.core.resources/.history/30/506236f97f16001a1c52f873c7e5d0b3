@@ -53,7 +53,7 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
     //#if Random
     private static GFTMovement movement;
     
-	public void GFTargetingBot() {
+	public GFTargetingBot() {
 		movement = new GFTMovement(this);	
 	}
 	//#endif
@@ -82,8 +82,8 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 		//#endif
   		
 		//#if DBL_Bullet_Power
-//@			System.out.print(" wonderful"); 
-//@			doubleBulletPower = true;
+			System.out.print(" wonderful"); 
+			doubleBulletPower = true;
   		//#endif
     	*/
     	
@@ -91,14 +91,14 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 //@		setColors(Color.BLUE, Color.BLACK, Color.YELLOW);
 		//#endif
     	//#if RBY
-//@		setColors(Color.RED, Color.BLACK, Color.WHITE);
+		setColors(Color.RED, Color.BLACK, Color.WHITE);
 		//#endif
     	//#if GWY
-		setColors(Color.GREEN, Color.WHITE, Color.YELLOW);
+//@		setColors(Color.GREEN, Color.WHITE, Color.YELLOW);
 		//#endif
 		
 	    //#if DBL_Bullet_Power
-//@		BULLET_POWER = 1.9;
+		BULLET_POWER = 1.9;
 		//#endif
 		
 		lateralDirection = 1;
