@@ -27,11 +27,6 @@
 					<feature name="DBL_Bullet_Power"/>
 				</and>
 			</and>
-			<alt abstract="true" name="Color">
-				<feature name="BBY"/>
-				<feature name="RBY"/>
-				<feature name="GWY"/>
-			</alt>
 		</and>
 	</struct>
 </featureModel>
