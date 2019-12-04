@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration>
 	<feature automatic="selected" name="Name"/>
-	<feature automatic="selected" manual="selected" name="Dodging"/>
-	<feature automatic="selected" name="WaveSurfing"/>
-	<feature manual="selected" name="Wall_Smoothing"/>
-	<feature automatic="selected" manual="selected" name="Movement"/>
-	<feature manual="selected" name="Random"/>
+	<feature name="Dodging"/>
+	<feature name="WaveSurfing"/>
+	<feature name="Wall_Smoothing"/>
+	<feature name="visibleEnemyWaves"/>
+	<feature name="Movement"/>
+	<feature name="Random"/>
 	<feature name="Firing"/>
 	<feature name="GF"/>
 	<feature name="DBL_Bullet_Power"/>

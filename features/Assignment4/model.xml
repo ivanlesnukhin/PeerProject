@@ -16,6 +16,7 @@
 			<and abstract="true" name="Dodging">
 				<and mandatory="true" name="WaveSurfing">
 					<feature name="Wall_Smoothing"/>
+					<feature name="visibleEnemyWaves"/>
 				</and>
 			</and>
 			<and abstract="true" name="Movement">
