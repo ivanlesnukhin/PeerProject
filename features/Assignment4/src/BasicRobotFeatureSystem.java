@@ -28,10 +28,13 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 //@    public ArrayList _surfDirections;
 //@    public ArrayList _surfAbsBearings;
     //#endif
-    
-    private static double BULLET_POWER = 1.0;
-
 	
+	//#if Random
+	private static final double BULLET_POWER = 1.9;
+    //#else
+//@    private static double BULLET_POWER = 1.0;
+	//#endif
+    
 	private static double lateralDirection;
 	private static double lastEnemyVelocity;
 
@@ -53,39 +56,15 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
     //#if Random
     private static GFTMovement movement;
     
-	public void BasicRobotFeatureSystem() {
+	public BasicRobotFeatureSystem() {
 		movement = new GFTMovement(this);	
 	}
 	//#endif
 	
+	
+	
 
     public void run() {
-    	/*
-    	//#if WaveSurfing
-//@			System.out.print("Hello");
-//@			waveSurfing = true;
-		//#endif
-	   
-		//#if Random
-			System.out.print(" beautiful");
-			randomMovement = true;
-		//#endif
-	   
-		//#if GF
-			System.out.print(" wonderful"); 
-			guessFactor = true;
-		//#endif
-  		
-  		//#if Wall_Smoothing
-//@			System.out.print(" wonderful"); 
-//@			wallSmoothing = true;
-		//#endif
-  		
-		//#if DBL_Bullet_Power
-			System.out.print(" wonderful"); 
-			doubleBulletPower = true;
-  		//#endif
-    	*/
     	
     	//#if BBY
 //@		setColors(Color.BLUE, Color.BLACK, Color.YELLOW);
@@ -95,10 +74,6 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 		//#endif
     	//#if GWY
 //@		setColors(Color.GREEN, Color.WHITE, Color.YELLOW);
-		//#endif
-		
-	    //#if DBL_Bullet_Power
-		BULLET_POWER = 1.9;
 		//#endif
 		
 		lateralDirection = 1;
@@ -187,6 +162,7 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 			addCustomEvent(wave);
 		}
 		//#if Random
+		        movement.onScannedRobot(e);
 		//#endif
 		setTurnRadarRightRadians(Utils.normalRelativeAngle(enemyAbsoluteBearing - getRadarHeadingRadians()) * 2);
 		//#endif
