@@ -53,7 +53,7 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
     //#if Random
     private static GFTMovement movement;
     
-	public GFTargetingBot() {
+	public void BasicRobotFeatureSystem() {
 		movement = new GFTMovement(this);	
 	}
 	//#endif
@@ -186,6 +186,8 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 		if (getEnergy() >= BULLET_POWER) {
 			addCustomEvent(wave);
 		}
+		//#if Random
+		//#endif
 		setTurnRadarRightRadians(Utils.normalRelativeAngle(enemyAbsoluteBearing - getRadarHeadingRadians()) * 2);
 		//#endif
 		
