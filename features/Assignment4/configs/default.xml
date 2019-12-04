@@ -6,7 +6,7 @@
 	<feature manual="selected" name="Wall_Smoothing"/>
 	<feature automatic="selected" manual="selected" name="Movement"/>
 	<feature manual="selected" name="Random"/>
-	<feature automatic="selected" manual="selected" name="Firing"/>
-	<feature automatic="selected" name="GF"/>
-	<feature manual="selected" name="DBL_Bullet_Power"/>
+	<feature name="Firing"/>
+	<feature name="GF"/>
+	<feature name="DBL_Bullet_Power"/>
 </configuration>
