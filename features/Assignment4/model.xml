@@ -34,4 +34,14 @@
 			</alt>
 		</and>
 	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>Random</var>
+				<not>
+					<var>WaveSurfing</var>
+				</not>
+			</imp>
+		</rule>
+	</constraints>
 </featureModel>
