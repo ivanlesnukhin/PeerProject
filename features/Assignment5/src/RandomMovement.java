@@ -47,4 +47,5 @@ class RandomMovement implements IMovement{
 	double angle = GFTUtils.absoluteBearing(robotLocation, robotDestination) - robot.getHeadingRadians();
 	robot.setAhead(Math.cos(angle) * 100);
 	robot.setTurnRightRadians(Math.tan(angle));
+	}
 }
