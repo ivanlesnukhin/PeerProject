@@ -74,25 +74,29 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 	//#endif
 	
 	
-	
+	boolean stringToBoolean (String input) {
+		if(input == "false") 
+			return false;
+		else 
+			return true;
+	}
 
     public void run() {
     	try (FileReader reader = new FileReader("runtime.properties")) {
     		Properties properties = new Properties();
     		properties.load(reader);
     		
-    		Wall_Smoothing = properties.getProperty("Wall_Smoothing");
-			visibleEnemyWaves = properties.getProperty("visibleEnemyWaves");
-			Random = properties.getProperty("Random");
-			GF = properties.getProperty("GF");
-			DBL_Bullet_Power = properties.getProperty("DBL_Bullet_Power");
-			BBY = properties.getProperty("BBY ");
-			RBY = properties.getProperty("RBY");
-			GWY = properties.getProperty("GWY");
+    		Wall_Smoothing = stringToBoolean(properties.getProperty("Wall_Smoothing"));
+			visibleEnemyWaves = stringToBoolean(properties.getProperty("visibleEnemyWaves"));
+			Random = stringToBoolean(properties.getProperty("Random"));
+			GF = stringToBoolean(properties.getProperty("GF"));
+			DBL_Bullet_Power = stringToBoolean(properties.getProperty("DBL_Bullet_Power"));
+			BBY = stringToBoolean(properties.getProperty("BBY "));
+			RBY = stringToBoolean(properties.getProperty("RBY"));
+			GWY = stringToBoolean(properties.getProperty("GWY"));
+    	}catch (Exception e){
+    		e.printStackTrace();
     	}
-    	
-    	
-    	
     	
     	if (BBY)
     		setColors(Color.BLUE, Color.BLACK, Color.YELLOW);
