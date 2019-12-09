@@ -5,6 +5,8 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
+import java.io.FileReader;
+import java.util.Properties; 
 
 /**
  * A combination of the movement from BasicSurfer and the gun from 
@@ -37,6 +39,16 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
     
 	private static double lateralDirection;
 	private static double lastEnemyVelocity;
+	
+	public boolean WaveSurfing = false, 
+			Wall_Smoothing = false,
+			visibleEnemyWaves = false,
+			Random = false,
+			GF = false,
+			DBL_Bullet_Power = false,
+			BBY = false,
+			RBY = false,
+			GWY = false;
 
 	//#if WaveSurfing
     // We must keep track of the enemy's energy level to detect EnergyDrop,
@@ -65,15 +77,29 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 	
 
     public void run() {
-    	//#if BBY
-		setColors(Color.BLUE, Color.BLACK, Color.YELLOW);
-		//#endif
-    	//#if RBY
-//@		setColors(Color.RED, Color.BLACK, Color.WHITE);
-		//#endif
-    	//#if GWY
-//@		setColors(Color.GREEN, Color.WHITE, Color.YELLOW);
-		//#endif
+    	try (FileReader reader = new FileReader("runtime.properties")) {
+    		Properties properties = new Properties();
+    		properties.load(reader);
+    		
+    		Wall_Smoothing = properties.getProperty("Wall_Smoothing");
+			visibleEnemyWaves = properties.getProperty("visibleEnemyWaves");
+			Random = properties.getProperty("Random");
+			GF = properties.getProperty("GF");
+			DBL_Bullet_Power = properties.getProperty("DBL_Bullet_Power");
+			BBY = properties.getProperty("BBY ");
+			RBY = properties.getProperty("RBY");
+			GWY = properties.getProperty("GWY");
+    	}
+    	
+    	
+    	
+    	
+    	if (BBY)
+    		setColors(Color.BLUE, Color.BLACK, Color.YELLOW);
+    	else if (RBY)
+    		setColors(Color.RED, Color.BLACK, Color.WHITE);
+    	else if (GWY)
+    		setColors(Color.GREEN, Color.WHITE, Color.YELLOW);
 
 	    //#if DBL_Bullet_Power
 //@		BULLET_POWER = 1.9;
