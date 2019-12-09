@@ -104,6 +104,10 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
     		setColors(Color.RED, Color.BLACK, Color.WHITE);
     	else if (GWY)
     		setColors(Color.GREEN, Color.WHITE, Color.YELLOW);
+    	
+    	
+    	if (Random)
+    		
 
 	    //#if DBL_Bullet_Power
 //@		BULLET_POWER = 1.9;
