@@ -1,5 +1,5 @@
 import robocode.*;
 
-public interface MovementMethod {
+public interface IMovement {
 	public void onScannedRobot(ScannedRobotEvent e);
 }

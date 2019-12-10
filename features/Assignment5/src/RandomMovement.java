@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.io.FileReader;
 import java.util.Properties; 
 
-class RandomMovement implements MovementMethod{
+class RandomMovement implements IMovement{
 	private static final double BATTLE_FIELD_WIDTH = 800;
 	private static final double BATTLE_FIELD_HEIGHT = 600;
 	private static final double WALL_MARGIN = 18;
@@ -47,4 +47,5 @@ class RandomMovement implements MovementMethod{
 	double angle = GFTUtils.absoluteBearing(robotLocation, robotDestination) - robot.getHeadingRadians();
 	robot.setAhead(Math.cos(angle) * 100);
 	robot.setTurnRightRadians(Math.tan(angle));
+	}
 }
