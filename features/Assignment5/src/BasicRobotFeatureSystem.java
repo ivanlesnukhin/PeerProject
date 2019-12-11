@@ -86,8 +86,14 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 	}
 
     public void run() {
+		setAdjustGunForRobotTurn(true);
+		setAdjustRadarForGunTurn(true);
 
-    }
+		do {
+			// basic mini-radar code
+			turnRadarRightRadians(Double.POSITIVE_INFINITY);
+		} while (true);
+	}
 
     public void onScannedRobot(ScannedRobotEvent e) {
     	movementMeth.onScannedRobot(e);

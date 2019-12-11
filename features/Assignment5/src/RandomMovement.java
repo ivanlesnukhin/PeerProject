@@ -24,14 +24,7 @@ class RandomMovement implements IMovement{
 	private double direction = 0.4;
  
 	RandomMovement(AdvancedRobot _robot) {
-
 		this.robot = _robot;
-
-		robot.setAdjustRadarForGunTurn(true);
-		robot.setAdjustGunForRobotTurn(true);
-		do {
-			robot.turnRadarRightRadians(Double.POSITIVE_INFINITY);
-		} while (true);
 	}
  
 	@Override
