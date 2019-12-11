@@ -25,7 +25,7 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 
 	public BasicRobotFeatureSystem() {
 
-		//////--------    Reads properties from file and converts into booleans
+		// Reads properties from file and converts into booleans
 		try (FileReader reader = new FileReader("runtime.properties")) {
 			Properties properties = new Properties();
 			properties.load(reader);
@@ -41,19 +41,18 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 		}catch (Exception e){
 			e.printStackTrace();
 		}
-		/////-------------
 
 
-		/////------------- Sets color
+		// Sets color
 		if (BBY)
 			setColors(Color.BLUE, Color.BLACK, Color.YELLOW);
 		else if (RBY)
 			setColors(Color.RED, Color.BLACK, Color.WHITE);
 		else if (GWY)
 			setColors(Color.GREEN, Color.WHITE, Color.YELLOW);
-		/////-------------
+		
 
-
+		// selects movement method
 		if(WaveSurfing) {
 			movementMeth = new WaveSurfing(this);
 		} else if(Random) {
@@ -63,6 +62,7 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 		lateralDirection = 1;
 		lastEnemyVelocity = 0;
 
+		// Sets up guessfactor targeting
 		if (GF) {
 			String movementMethod = "";
 			if(WaveSurfing) {
@@ -73,16 +73,20 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 			firingMethod = new GuessFactor(this, lastEnemyVelocity, lateralDirection, movementMethod);
 		}
 
+		// Sets bullet power
 		if (DBL_Bullet_Power)
 			BULLET_POWER = 1.9;
 	}
 	
-	
+	// Changes a string to a boolean if 
 	boolean stringToBoolean (String input) {
 		if(input == "false") 
 			return false;
-		else 
+		else if (input == "true")
 			return true;
+		else
+			System.exit(0);
+		return false;
 	}
 
     public void run() {
