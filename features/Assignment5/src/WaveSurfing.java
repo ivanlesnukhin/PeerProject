@@ -40,7 +40,7 @@ class WaveSurfing implements IMovement{
     
     WaveSurfing(AdvancedRobot _robot) {
 		this.robot = _robot;
-	
+    
     _enemyWaves = new ArrayList();
     _surfDirections = new ArrayList();
     _surfAbsBearings = new ArrayList();
@@ -319,4 +319,23 @@ public void onScannedRobot(ScannedRobotEvent e) {
             robot.setAhead(100);
         }
     }
+    
+    public void onPaint(java.awt.Graphics2D g) {
+        g.setColor(java.awt.Color.red);
+        for(int i = 0; i < _enemyWaves.size(); i++){
+           EnemyWave w = (EnemyWave)(_enemyWaves.get(i));
+           Point2D.Double center = w.fireLocation;
+
+           //int radius = (int)(w.distanceTraveled + w.bulletVelocity);
+           //hack to make waves line up visually, due to execution sequence in robocode engine
+           //use this only if you advance waves in the event handlers (eg. in onScannedRobot())
+           //NB! above hack is now only necessary for robocode versions before 1.4.2
+           //otherwise use: 
+           int radius = (int)w.distanceTraveled;
+
+           //Point2D.Double center = w.fireLocation;
+           if(radius - 40 < center.distance(_myLocation))
+              g.drawOval((int)(center.x - radius ), (int)(center.y - radius), radius*2, radius*2);
+        }
+   }
 }
