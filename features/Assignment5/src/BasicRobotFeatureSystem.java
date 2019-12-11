@@ -30,7 +30,7 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
     public ArrayList _surfDirections;
     public ArrayList _surfAbsBearings;
     //#endif
-	
+	public IFiring firingMethod;
 	//#if Random
 //@	private static final double BULLET_POWER = 1.9;
     //#else
@@ -106,9 +106,15 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
     		setColors(Color.GREEN, Color.WHITE, Color.YELLOW);
     	
     	
-    	if (Random)
-    		
-
+    	if (GF) {
+    	    String movementMethod = "";
+            if(WaveSurfing) {
+                movementMethod = "WaveSurfing";
+            } else if (Random) {
+                movementMethod = "Random";
+            }
+            firingMethod = new GuessFactor(this, lastEnemyVelocity, lateralDirection, movementMethod);
+        }
 	    //#if DBL_Bullet_Power
 //@		BULLET_POWER = 1.9;
 		//#endif
@@ -177,32 +183,7 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
         updateWaves();
         doSurfing();
         //#endif
-        
-        //#if GF
-		double enemyAbsoluteBearing = getHeadingRadians() + e.getBearingRadians();
-		double enemyDistance = e.getDistance();
-		double enemyVelocity = e.getVelocity();
-		if (enemyVelocity != 0) {
-			lateralDirection = GFTUtils.sign(enemyVelocity * Math.sin(e.getHeadingRadians() - enemyAbsoluteBearing));
-		}
-		GFTWave wave = new GFTWave(this);
-		wave.gunLocation = new Point2D.Double(getX(), getY());
-		GFTWave.targetLocation = GFTUtils.project(wave.gunLocation, enemyAbsoluteBearing, enemyDistance);
-		wave.lateralDirection = lateralDirection;
-		wave.bulletPower = BULLET_POWER;
-		wave.setSegmentations(enemyDistance, enemyVelocity, lastEnemyVelocity);
-		lastEnemyVelocity = enemyVelocity;
-		wave.bearing = enemyAbsoluteBearing;
-		setTurnGunRightRadians(Utils.normalRelativeAngle(enemyAbsoluteBearing - getGunHeadingRadians() + wave.mostVisitedBearingOffset()));
-		setFire(wave.bulletPower);
-		if (getEnergy() >= BULLET_POWER) {
-			addCustomEvent(wave);
-		}
-		//#if Random
-//@		        movement.onScannedRobot(e);
-		//#endif
-		setTurnRadarRightRadians(Utils.normalRelativeAngle(enemyAbsoluteBearing - getRadarHeadingRadians()) * 2);
-		//#endif
+        firingMethod.onScannedRobot(e);
 		
     }
 //#if WaveSurfing
@@ -460,85 +441,7 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 
 
 //#if GF
-class GFTWave extends Condition {
-	static Point2D targetLocation;
 
-	double bulletPower;
-	Point2D gunLocation;
-	double bearing;
-	double lateralDirection;
-//#if Random
-//@	private static final double MAX_DISTANCE = 1000;
-//#endif
-//#if WaveSurfing
-	private static final double MAX_DISTANCE = 900;
-//#endif
-	private static final int DISTANCE_INDEXES = 5;
-	private static final int VELOCITY_INDEXES = 5;
-	private static final int BINS = 25;
-	private static final int MIDDLE_BIN = (BINS - 1) / 2;
-	private static final double MAX_ESCAPE_ANGLE = 0.7;
-	private static final double BIN_WIDTH = MAX_ESCAPE_ANGLE / (double)MIDDLE_BIN;
-	
-	private static int[][][][] statBuffers = new int[DISTANCE_INDEXES][VELOCITY_INDEXES][VELOCITY_INDEXES][BINS];
-
-	private int[] buffer;
-	private AdvancedRobot robot;
-	private double distanceTraveled;
-	
-	GFTWave(AdvancedRobot _robot) {
-		this.robot = _robot;
-	}
-	
-	public boolean test() {
-		advance();
-		if (hasArrived()) {
-			buffer[currentBin()]++;
-			robot.removeCustomEvent(this);
-		}
-		return false;
-	}
-
-	double mostVisitedBearingOffset() {
-		return (lateralDirection * BIN_WIDTH) * (mostVisitedBin() - MIDDLE_BIN);
-	}
-	
-	void setSegmentations(double distance, double velocity, double lastVelocity) {
-		//#if WaveSurfing
-		int distanceIndex = Math.min(DISTANCE_INDEXES-1, (int)(distance / (MAX_DISTANCE / DISTANCE_INDEXES)));
-		//#endif
-		//#if Random
-//@		int distanceIndex = (int)(distance / (MAX_DISTANCE / DISTANCE_INDEXES));
-		//#endif
-		int velocityIndex = (int)Math.abs(velocity / 2);
-		int lastVelocityIndex = (int)Math.abs(lastVelocity / 2);
-		buffer = statBuffers[distanceIndex][velocityIndex][lastVelocityIndex];
-	}
-
-	private void advance() {
-		distanceTraveled += GFTUtils.bulletVelocity(bulletPower);
-	}
-
-	private boolean hasArrived() {
-		return distanceTraveled > gunLocation.distance(targetLocation) - 18;
-	}
-	
-	private int currentBin() {
-		int bin = (int)Math.round(((Utils.normalRelativeAngle(GFTUtils.absoluteBearing(gunLocation, targetLocation) - bearing)) /
-				(lateralDirection * BIN_WIDTH)) + MIDDLE_BIN);
-		return GFTUtils.minMax(bin, 0, BINS - 1);
-	}
-	
-	private int mostVisitedBin() {
-		int mostVisited = MIDDLE_BIN;
-		for (int i = 0; i < BINS; i++) {
-			if (buffer[i] > buffer[mostVisited]) {
-				mostVisited = i;
-			}
-		}
-		return mostVisited;
-	}	
-}
 
 class GFTUtils {
 	static double bulletVelocity(double power) {
