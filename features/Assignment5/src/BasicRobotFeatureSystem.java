@@ -111,23 +111,10 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
     	} else if(Random) {
     		movementMeth = new RandomMovement(this);
     	} 
-    	
-		
+
+
 		lateralDirection = 1;
 		lastEnemyVelocity = 0;
-		
-		
-        _enemyWaves = new ArrayList();
-        _surfDirections = new ArrayList();
-        _surfAbsBearings = new ArrayList();
-
-        setAdjustGunForRobotTurn(true);
-        setAdjustRadarForGunTurn(true);
-
-        do {
-            // basic mini-radar code
-            turnRadarRightRadians(Double.POSITIVE_INFINITY);
-        } while (true);
     }
 
 	    //#if DBL_Bullet_Power
