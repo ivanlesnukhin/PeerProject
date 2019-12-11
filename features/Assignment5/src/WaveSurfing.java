@@ -13,7 +13,7 @@ import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 
 
-class WaveSurfing implements MovementMethod{
+class WaveSurfing implements IMovement{
 	public static int BINS = 47;
     public static double _surfStats[] = new double[BINS]; // we'll use 47 bins
     public Point2D.Double _myLocation;     // our bot's location
@@ -23,6 +23,7 @@ class WaveSurfing implements MovementMethod{
     public ArrayList _surfDirections;
     public ArrayList _surfAbsBearings;
 	private AdvancedRobot robot;
+	
     
  // We must keep track of the enemy's energy level to detect EnergyDrop,
     // indicating a bullet is fired
@@ -39,28 +40,27 @@ class WaveSurfing implements MovementMethod{
     
     WaveSurfing(AdvancedRobot _robot) {
 		this.robot = _robot;
-	}
-    
+	
     _enemyWaves = new ArrayList();
     _surfDirections = new ArrayList();
     _surfAbsBearings = new ArrayList();
 
-    setAdjustGunForRobotTurn(true);
-    setAdjustRadarForGunTurn(true);
+    robot.setAdjustGunForRobotTurn(true);
+    robot.setAdjustRadarForGunTurn(true);
 
     do {
         // basic mini-radar code
-        turnRadarRightRadians(Double.POSITIVE_INFINITY);
+    	robot.turnRadarRightRadians(Double.POSITIVE_INFINITY);
     } while (true);
 }
 
 public void onScannedRobot(ScannedRobotEvent e) {
-    _myLocation = new Point2D.Double(getX(), getY());
+    _myLocation = new Point2D.Double(robot.getX(), robot.getY());
 
-    double lateralVelocity = getVelocity()*Math.sin(e.getBearingRadians());
-    double absBearing = e.getBearingRadians() + getHeadingRadians();
+    double lateralVelocity = robot.getVelocity()*Math.sin(e.getBearingRadians());
+    double absBearing = e.getBearingRadians() + robot.getHeadingRadians();
 
-    setTurnRadarRightRadians(Utils.normalRelativeAngle(absBearing - getRadarHeadingRadians()) * 2);
+    robot.setTurnRadarRightRadians(Utils.normalRelativeAngle(absBearing - robot.getRadarHeadingRadians()) * 2);
 
     _surfDirections.add(0,
         new Integer((lateralVelocity >= 0) ? 1 : -1));
@@ -71,7 +71,7 @@ public void onScannedRobot(ScannedRobotEvent e) {
     if (bulletPower < 3.01 && bulletPower > 0.09
         && _surfDirections.size() > 2) {
         EnemyWave ew = new EnemyWave();
-        ew.fireTime = getTime() - 1;
+        ew.fireTime = robot.getTime() - 1;
         ew.bulletVelocity = bulletVelocity(bulletPower);
         ew.distanceTraveled = bulletVelocity(bulletPower);
         ew.direction = ((Integer)_surfDirections.get(2)).intValue();
@@ -89,12 +89,13 @@ public void onScannedRobot(ScannedRobotEvent e) {
 
     updateWaves();
     doSurfing();
+}
     
     public void updateWaves() {
         for (int x = 0; x < _enemyWaves.size(); x++) {
             EnemyWave ew = (EnemyWave)_enemyWaves.get(x);
 
-            ew.distanceTraveled = (getTime() - ew.fireTime) * ew.bulletVelocity;
+            ew.distanceTraveled = (robot.getTime() - ew.fireTime) * ew.bulletVelocity;
             if (ew.distanceTraveled >
                 _myLocation.distance(ew.fireLocation) + 50) {
                 _enemyWaves.remove(x);
@@ -181,8 +182,8 @@ public void onScannedRobot(ScannedRobotEvent e) {
     // http://robowiki.net?Apollon
     public Point2D.Double predictPosition(EnemyWave surfWave, int direction) {
     	Point2D.Double predictedPosition = (Point2D.Double)_myLocation.clone();
-    	double predictedVelocity = getVelocity();
-    	double predictedHeading = getHeadingRadians();
+    	double predictedVelocity = robot.getVelocity();
+    	double predictedHeading = robot.getHeadingRadians();
     	double maxTurning, moveAngle, moveDir;
 
         int counter = 0; // number of ticks in the future
@@ -250,7 +251,7 @@ public void onScannedRobot(ScannedRobotEvent e) {
             goAngle = wallSmoothing(_myLocation, goAngle + (Math.PI/2), 1);
         }
 
-        setBackAsFront(this, goAngle);
+        setBackAsFront(robot, goAngle);
     }
 
     // This can be defined as an inner class if you want.
@@ -318,5 +319,4 @@ public void onScannedRobot(ScannedRobotEvent e) {
             robot.setAhead(100);
         }
     }
-}
 }
