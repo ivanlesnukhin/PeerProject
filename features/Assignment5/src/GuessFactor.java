@@ -39,17 +39,21 @@ class GuessFactor implements IFiring {
 		if (robot.getEnergy() >= BULLET_POWER) {
 			robot.addCustomEvent(wave);
 		}
-		robot.setTurnRadarRightRadians(Utils.normalRelativeAngle(enemyAbsoluteBearing - robot.getRadarHeadingRadians()) * 2);
+		setTurnRadarRightRadians(Utils.normalRelativeAngle(enemyAbsoluteBearing - robot.getRadarHeadingRadians()) * 2);
 	}
 
-	@Override
-	public void setTurnGunRightRadians(double angle) {
-		robot.setTurnGunRightRadians(angle);
-	}
 
 	@Override
 	public void setFire(double BulletPower) {
 		robot.setFire(BulletPower);
+	}
+	
+	public void setTurnGunRightRadians(double angle) {
+		robot.setTurnGunRightRadians(angle);
+	}
+	
+	public void setTurnRadarRightRadians(double angle) {
+		robot.setTurnRadarRightRadians(angle);
 	}
 }
 

@@ -7,4 +7,6 @@ public interface IFiring {
 	public void setFire(double BulletPower);
 
 	public void onScannedRobot(ScannedRobotEvent e);
+	
+	public void setTurnRadarRightRadians(double angle);
 }
