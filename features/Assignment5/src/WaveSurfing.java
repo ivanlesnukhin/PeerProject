@@ -41,18 +41,10 @@ class WaveSurfing implements IMovement{
     WaveSurfing(AdvancedRobot _robot) {
 		this.robot = _robot;
     
-    _enemyWaves = new ArrayList();
-    _surfDirections = new ArrayList();
-    _surfAbsBearings = new ArrayList();
-
-    robot.setAdjustGunForRobotTurn(true);
-    robot.setAdjustRadarForGunTurn(true);
-
-    do {
-        // basic mini-radar code
-    	robot.turnRadarRightRadians(Double.POSITIVE_INFINITY);
-    } while (true);
-}
+	    _enemyWaves = new ArrayList();
+	    _surfDirections = new ArrayList();
+	    _surfAbsBearings = new ArrayList();
+	}
 
 public void onScannedRobot(ScannedRobotEvent e) {
     _myLocation = new Point2D.Double(robot.getX(), robot.getY());

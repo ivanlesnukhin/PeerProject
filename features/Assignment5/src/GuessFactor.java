@@ -47,14 +47,16 @@ class GuessFactor implements IFiring {
 	public void setFire(double BulletPower) {
 		robot.setFire(BulletPower);
 	}
-	
+
 	public void setTurnGunRightRadians(double angle) {
 		robot.setTurnGunRightRadians(angle);
 	}
-	
+
+	@Override
 	public void setTurnRadarRightRadians(double angle) {
 		robot.setTurnRadarRightRadians(angle);
 	}
+
 }
 
 class GFTWave extends Condition {
