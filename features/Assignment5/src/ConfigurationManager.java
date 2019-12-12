@@ -93,10 +93,13 @@ public class ConfigurationManager {
 //	    		System.out.println("Parameter found: " +data);
 	    		//Read value after "=" sign which must be true or false
 	    		String tmp = data.split("=")[1];
-	    		if(tmp.matches("true\r")==true) {
+	    		if(tmp.contains("\r")) {
+	    			tmp = tmp.split("\r")[0];
+	    		}
+	    		if(tmp.matches("true")==true) {
 	    			if(!silent) {System.out.println("Requested parameter " +requestParameter +" equals \"true\" found");}
 	    			return true;
-	    		} else if (tmp.matches("false\r")==true) {
+	    		} else if (tmp.matches("false")==true) {
 	    			if(!silent) {System.out.println("Requested parameter " +requestParameter +" equals \"false\" found");} 
 	    			return false;
 	    		} else {
@@ -131,10 +134,13 @@ public class ConfigurationManager {
 	    		if(!silent) {System.out.println("Parameter found: " +data);}
 	    		//Read value after "=" sign which must be true or false
 	    		String tmp = data.split("=")[1];
-	    		if(tmp.matches("true\r")==true) {
+	    		if(tmp.contains("\r")) {
+	    			tmp = tmp.split("\r")[0];
+	    		}
+	    		if(tmp.matches("true")==true) {
 	    			if(!silent) {System.out.println("Requested parameter " +requestString +" equals \"true\" found");}
 	    			return true;
-	    		} else if (tmp.matches("false\r")==true) {
+	    		} else if (tmp.matches("false")==true) {
 	    			if(!silent) {System.out.println("Requested parameter " +requestString +" equals \"false\" found");} 
 	    			return false;
 	    		} else {

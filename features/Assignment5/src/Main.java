@@ -8,14 +8,14 @@ public class Main {
 		InputStream is = ClassLoader.getSystemResourceAsStream("runtime.properties");
 		Scanner sc = new Scanner(is);
 		ConfigurationManager cm = ConfigurationManager.getInstance();
-		cm.getProperty("WaveSurfing",false);
-		cm.getProperty("Random",false);
+		cm.getProperty("WaveSurfing",true);
+		cm.getProperty("Random",true);
 		cm.checkPropertyKindActive("GF");
 		
 		while(sc.hasNext()) {
-			if (sc.next() == "Random=true") {
-				System.out.println("Hello");
-			}
+			String tmpString = sc.next().split("=")[0];
+			boolean tmpBool = cm.getProperty(tmpString, false);
+			System.out.println(tmpString + " is " + tmpBool + "\n");
 		}
 		/*if(Random) {
 			System.out.println("Hello");
