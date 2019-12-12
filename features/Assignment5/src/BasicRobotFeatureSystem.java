@@ -43,6 +43,7 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 		}
 		/////-------------
 
+		//ClassLoader getClass.getclassLoader.getResourceAStream()
 
 		/////------------- Sets color
 		if (BBY)
