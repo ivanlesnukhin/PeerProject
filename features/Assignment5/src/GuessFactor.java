@@ -135,3 +135,4 @@ class GFTWave extends Condition {
 		return mostVisited;
 	}	
 }
+
