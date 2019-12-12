@@ -42,6 +42,7 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 			e.printStackTrace();
 		}
 
+		//ClassLoader getClass.getclassLoader.getResourceAStream()
 
 		// Sets color
 		if (BBY)
