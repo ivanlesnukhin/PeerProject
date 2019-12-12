@@ -39,7 +39,7 @@ class GuessFactor implements IFiring {
 		if (robot.getEnergy() >= BULLET_POWER) {
 			robot.addCustomEvent(wave);
 		}
-		robot.setTurnRadarRightRadians(Utils.normalRelativeAngle(enemyAbsoluteBearing - robot.getRadarHeadingRadians()) * 2);
+		setTurnRadarRightRadians(Utils.normalRelativeAngle(enemyAbsoluteBearing - robot.getRadarHeadingRadians()) * 2);
 	}
 
 	@Override
@@ -51,6 +51,12 @@ class GuessFactor implements IFiring {
 	public void setFire(double BulletPower) {
 		robot.setFire(BulletPower);
 	}
+
+	@Override
+	public void setTurnRadarRightRadians(double angle) {
+		robot.setTurnRadarRightRadians(angle);
+	}
+	
 }
 
 class GFTWave extends Condition {
