@@ -22,11 +22,13 @@
 			<and abstract="true" name="Movement">
 				<feature name="Random"/>
 			</and>
-			<and abstract="true" name="Firing">
-				<and mandatory="true" name="GF">
+			<alt abstract="true" name="Firing">
+				<and name="GF">
 					<feature name="DBL_Bullet_Power"/>
 				</and>
-			</and>
+				<feature name="СT"/>
+				<feature name="LT"/>
+			</alt>
 			<alt abstract="true" name="Color">
 				<feature name="BBY"/>
 				<feature name="RBY"/>
