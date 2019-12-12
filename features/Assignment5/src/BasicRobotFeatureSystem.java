@@ -2,7 +2,9 @@ import robocode.*;
 
 import java.awt.*;
 import java.io.FileReader;
+import java.io.InputStream;
 import java.util.Properties;
+import java.util.Scanner;
 
 public class BasicRobotFeatureSystem extends AdvancedRobot {
 	IMovement movementMeth;
@@ -25,22 +27,19 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 
 	public BasicRobotFeatureSystem() {
 
-		// Reads properties from file and converts into booleans
-		try (FileReader reader = new FileReader("runtime.properties")) {
-			Properties properties = new Properties();
-			properties.load(reader);
-
-			Wall_Smoothing = stringToBoolean(properties.getProperty("Wall_Smoothing"));
-			visibleEnemyWaves = stringToBoolean(properties.getProperty("visibleEnemyWaves"));
-			Random = stringToBoolean(properties.getProperty("Random"));
-			GF = stringToBoolean(properties.getProperty("GF"));
-			DBL_Bullet_Power = stringToBoolean(properties.getProperty("DBL_Bullet_Power"));
-			BBY = stringToBoolean(properties.getProperty("BBY "));
-			RBY = stringToBoolean(properties.getProperty("RBY"));
-			GWY = stringToBoolean(properties.getProperty("GWY"));
-		}catch (Exception e){
-			e.printStackTrace();
-		}
+		// Reads properties from file and converts into booleans		
+		InputStream is = ClassLoader.getSystemResourceAsStream("runtime.properties");
+		Scanner sc = new Scanner(is);
+		ConfigurationManager cm = ConfigurationManager.getInstance();
+		
+		Wall_Smoothing = cm.getProperty ("Wall_Smoothing", true);
+		visibleEnemyWaves = cm.getProperty ("visibleEnemyWaves", true);
+		Random = cm.getProperty ("Random", true);
+		GF = cm.getProperty ("GF", true);
+		DBL_Bullet_Power = cm.getProperty ("DBL_Bullet_Power", true);
+		BBY = cm.getProperty ("BBY", true);
+		RBY = cm.getProperty ("RBY", true);
+		GWY = cm.getProperty ("GWY", true);
 
 		//ClassLoader getClass.getclassLoader.getResourceAStream()
 
