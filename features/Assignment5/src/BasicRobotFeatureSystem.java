@@ -19,6 +19,9 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 			visibleEnemyWaves = false,
 			Random = false,
 			GF = false,
+			//IMPLEMENTATION OF LT AND CT
+			//LT = false,
+			//CT = false,
 			DBL_Bullet_Power = false,
 			BBY = false,
 			RBY = false,
@@ -36,6 +39,9 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 		visibleEnemyWaves = cm.getProperty ("visibleEnemyWaves", true);
 		Random = cm.getProperty ("Random", true);
 		GF = cm.getProperty ("GF", true);
+		//IMPLEMENTATION OF LT AND CT
+		//LT = cm.getProperty("LT", true);
+		//CT = cm.getProperty("CT", true);
 		DBL_Bullet_Power = cm.getProperty ("DBL_Bullet_Power", true);
 		BBY = cm.getProperty ("BBY", true);
 		RBY = cm.getProperty ("RBY", true);
@@ -71,6 +77,12 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 				movementMethod = "Random";
 			}
 			firingMethod = new GuessFactor(this, lastEnemyVelocity, lateralDirection, movementMethod);
+			//IMPLEMENTATION OF LT AND CT
+		/*} else if(LT) {
+			firingMethod = new LinearTargeting(this);
+		} else if (CT) {
+			firingMethod = new CircularTargeting(this); */
+
 		}
 
 		// Sets bullet power
