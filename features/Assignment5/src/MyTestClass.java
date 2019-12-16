@@ -1,5 +1,6 @@
 import robocode.*;
 import static org.junit.jupiter.api.Assertions.*;
+import java.awt.geom.Point2D;
 import org.junit.jupiter.api.Test;
 
 
@@ -36,9 +37,24 @@ class MyTestClass {
 		firing.setTurnRadarRightRadians(deltaRadarAngle);
 		double newAngle = robotLT.getRadarHeadingRadians();
 		
+	
+		assertNotNull(robotLT); //-does the robot exist or not? This is a question!.. 
 		assertNotSame(oldAngle, newAngle);
 		assertSame(newAngle, oldAngle + deltaRadarAngle);
 	}
 	
-	//
+	// RandomMovement Tests
+	
+	private AdvancedRobot robotRM = new AdvancedRobot();
+	private AdvancedRobot enemyRM = new AdvancedRobot();
+	
+	private IMovement movement = new RandomMovement(robotRM);
+	
+	@Test
+	void testOnScannedRobot() {
+		Point2D oldRobotLocation = new Point2D.Double(robotRM.getX(), robotRM.getY());
+		
+		assertSame(oldRobotLocation, new Point2D.Double(robotRM.getX(), robotRM.getY()));
+		
+	}
 }
