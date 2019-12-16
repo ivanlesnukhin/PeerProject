@@ -2,7 +2,7 @@
 <featureModel>
 	<properties>
 		<graphics key="showhiddenfeatures" value="true"/>
-		<graphics key="legendposition" value="337,307"/>
+		<graphics key="legendposition" value="535,273"/>
 		<graphics key="legendautolayout" value="false"/>
 		<graphics key="showshortnames" value="false"/>
 		<graphics key="layout" value="vertical"/>
@@ -13,17 +13,17 @@
 	<struct>
 		<and abstract="true" mandatory="true" name="Name">
 			<graphics key="collapsed" value="false"/>
-			<and abstract="true" name="Dodging">
-				<and mandatory="true" name="WaveSurfing">
+			<or abstract="true" name="Movement">
+				<and name="WaveSurfing">
 					<feature mandatory="true" name="Wall_Smoothing"/>
 					<feature name="visibleEnemyWaves"/>
 				</and>
-			</and>
-			<and abstract="true" name="Movement">
 				<feature name="Random"/>
+
 			</and>
 			<alt abstract="true" name="Firing">
 				<and name="GF">
+
 					<feature name="DBL_Bullet_Power"/>
 				</and>
 				<feature name="СT"/>
