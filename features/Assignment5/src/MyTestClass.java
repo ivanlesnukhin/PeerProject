@@ -40,5 +40,5 @@ class MyTestClass {
 		assertSame(newAngle, oldAngle + deltaRadarAngle);
 	}
 	
-	
+	//
 }
