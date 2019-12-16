@@ -10,12 +10,6 @@ class MyTestClass {
  
 	
 	@Test
-	void testSetFire() {
-		double firePower = 5.1;
-		firing.setFire(firePower);
-	}
-	
-	@Test
 	void testSetTurnGunRightRadians() {
 		double gunAngle = 2.4;
 		double beforeAngle = robot.getHeadingRadians();
@@ -24,7 +18,7 @@ class MyTestClass {
 		double currentAngle = robot.getHeadingRadians();
 		
 		assertNotSame(beforeAngle, currentAngle);
-		assertSame(currentAngle, gunAngle);
+		assertSame(currentAngle, beforeAngle+gunAngle);
 	}
 	
 	@Test
@@ -36,6 +30,6 @@ class MyTestClass {
 		double currentAngle = robot.getRadarHeadingRadians();
 		
 		assertNotSame(beforeAngle, currentAngle);
-		assertSame(currentAngle, radarAngle);
+		assertSame(currentAngle, beforeAngle+radarAngle);
 	}
 }
