@@ -19,12 +19,16 @@
 					<feature name="visibleEnemyWaves"/>
 				</and>
 				<feature name="Random"/>
-			</or>
-			<and abstract="true" name="Firing">
-				<and mandatory="true" name="GF">
+
+			</and>
+			<alt abstract="true" name="Firing">
+				<and name="GF">
+
 					<feature name="DBL_Bullet_Power"/>
 				</and>
-			</and>
+				<feature name="СT"/>
+				<feature name="LT"/>
+			</alt>
 			<alt abstract="true" name="Color">
 				<feature name="BBY"/>
 				<feature name="RBY"/>
