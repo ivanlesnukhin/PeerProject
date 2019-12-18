@@ -2,7 +2,7 @@
 
 	<!-- adapt the folders (here, this build.ant file is in a sub-folder of the projet) -->
 	<property name="projectHome" location="." />
-	<property name="BinFolder" location="bin" />
+	<property name="BinFolder" location="target/classes" />
 
 	<target name="copyPropertiesToBin">
 		<delete file="${BinFolder}/runtime.properties" />

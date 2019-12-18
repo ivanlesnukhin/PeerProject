@@ -34,8 +34,6 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 	public BasicRobotFeatureSystem() {
 
 		// Reads properties from file and converts into booleans		
-		InputStream is = ClassLoader.getSystemResourceAsStream("runtime.properties");
-		Scanner sc = new Scanner(is);
 		ConfigurationManager cm = ConfigurationManager.getInstance();
 		
 		Wall_Smoothing = cm.getProperty ("Wall_Smoothing", true);
@@ -44,7 +42,7 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 		GF = cm.getProperty ("GF", true);
 		//IMPLEMENTATION OF LT AND CT
 		LT = cm.getProperty("LT", true);
-		CT = cm.getProperty("CT", true);
+		CT = cm.getProperty("СT", true);
 		DBL_Bullet_Power = cm.getProperty ("DBL_Bullet_Power", true);
 		BBY = cm.getProperty ("BBY", true);
 		RBY = cm.getProperty ("RBY", true);
@@ -53,12 +51,6 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 		//ClassLoader getClass.getclassLoader.getResourceAStream()
 
 		// Sets color
-		if (BBY)
-			setColors(Color.BLUE, Color.BLACK, Color.YELLOW);
-		else if (RBY)
-			setColors(Color.RED, Color.BLACK, Color.WHITE);
-		else if (GWY)
-			setColors(Color.GREEN, Color.WHITE, Color.YELLOW);
 		
 
 		// selects movement method
@@ -81,10 +73,10 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 			}
 			firingMethod = new GuessFactor(this, lastEnemyVelocity, lateralDirection, movementMethod);
 			//IMPLEMENTATION OF LT AND CT
-		/*} else if(LT) {
+		} else if(LT) {
 			firingMethod = new LinearTargeting(this);
 		} else if (CT) {
-			firingMethod = new CircularTargeting(this); */
+			firingMethod = new CircularTargeting(this); 
 
 		}
 
@@ -105,6 +97,12 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 	}
 
     public void run() {
+		if (BBY)
+			setColors(Color.BLUE, Color.BLACK, Color.YELLOW);
+		else if (RBY)
+			setColors(Color.RED, Color.BLACK, Color.WHITE);
+		else if (GWY)
+			setColors(Color.GREEN, Color.WHITE, Color.YELLOW);
 		setAdjustGunForRobotTurn(true);
 		setAdjustRadarForGunTurn(true);
 
