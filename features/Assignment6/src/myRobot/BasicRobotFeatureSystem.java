@@ -47,7 +47,7 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 		BBY = cm.getProperty ("BBY", true);
 		RBY = cm.getProperty ("RBY", true);
 		GWY = cm.getProperty ("GWY", true);
-
+		
 		//ClassLoader getClass.getclassLoader.getResourceAStream()
 
 		// Sets color
@@ -56,6 +56,7 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 		// selects movement method
 		if(WaveSurfing) {
 			movementMeth = new WaveSurfing(this);
+			System.out.print(WaveSurfing + "  " + movementMeth.toString());
 		} else if(Random) {
 			movementMeth = new RandomMovement(this);
 		}
@@ -113,8 +114,11 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 	}
 
     public void onScannedRobot(ScannedRobotEvent e) {
+    	System.out.print("TEST OUTPUT BLA BLA BLA");
+    	firingMethod.onScannedRobot(e);
+    	System.out.print("FIRING METHOD WORKS!!!");
     	movementMeth.onScannedRobot(e);
-        firingMethod.onScannedRobot(e);
+        
     }
 }
 
