@@ -36,6 +36,7 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 		// Reads properties from file and converts into booleans		
 		ConfigurationManager cm = ConfigurationManager.getInstance();
 		
+		WaveSurfing = cm.getProperty("WaveSurfing", true);
 		Wall_Smoothing = cm.getProperty ("Wall_Smoothing", true);
 		visibleEnemyWaves = cm.getProperty ("visibleEnemyWaves", true);
 		Random = cm.getProperty ("Random", true);
@@ -52,11 +53,11 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 
 		// Sets color
 		
-
+		System.out.print(WaveSurfing + "\n");
 		// selects movement method
 		if(WaveSurfing) {
 			movementMeth = new WaveSurfing(this);
-			System.out.print(WaveSurfing + "  " + movementMeth.toString());
+			System.out.print(WaveSurfing + "\n");
 		} else if(Random) {
 			movementMeth = new RandomMovement(this);
 		}
@@ -114,6 +115,7 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 	}
 
     public void onScannedRobot(ScannedRobotEvent e) {
+    	System.out.print(WaveSurfing + "\n");
     	System.out.print("TEST OUTPUT BLA BLA BLA");
     	firingMethod.onScannedRobot(e);
     	System.out.print("FIRING METHOD WORKS!!!");
