@@ -592,3 +592,682 @@ Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING
 	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:385)
 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:213)
 	... 9 more
+!SESSION 2019-12-17 17:22:46.927 -----------------------------------------------
+eclipse.buildId=4.9.0.I20180906-0745
+java.version=1.8.0_144
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=sv_SE
+Framework arguments:  -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -data C:\Users\jespe\Documents\Assignment3ComplexSystems\PeerProject\features -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2019-12-17 17:22:57.878
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\jespe'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2019-12-17 17:22:59.945
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $. ; version: 2.0.7.v20180504-0806
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:224)
+	at com.google.gson.Gson.fromJson(Gson.java:888)
+	at com.google.gson.Gson.fromJson(Gson.java:853)
+	at com.google.gson.Gson.fromJson(Gson.java:802)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:91)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:66)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:124)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:385)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:213)
+	... 9 more
+
+!ENTRY org.eclipse.ui 4 4 2019-12-17 17:59:55.760
+!MESSAGE Unable to create part
+!SUBENTRY 1 org.eclipse.core.filebuffers 4 0 2019-12-17 17:59:55.760
+!MESSAGE Cannot determine URI for '/Assignment4/src/BasicRobotFeatureSystem.java'.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Cannot determine URI for '/Assignment4/src/BasicRobotFeatureSystem.java'.
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer.create(ResourceFileBuffer.java:239)
+	at org.eclipse.core.internal.filebuffers.TextFileBufferManager.connect(TextFileBufferManager.java:115)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.createFileInfo(TextFileDocumentProvider.java:563)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.createFileInfo(CompilationUnitDocumentProvider.java:1013)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.connect(TextFileDocumentProvider.java:481)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.connect(CompilationUnitDocumentProvider.java:1277)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.doSetInput(AbstractTextEditor.java:4167)
+	at org.eclipse.ui.texteditor.StatusTextEditor.doSetInput(StatusTextEditor.java:260)
+	at org.eclipse.ui.texteditor.AbstractDecoratedTextEditor.doSetInput(AbstractDecoratedTextEditor.java:1476)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.internalDoSetInput(JavaEditor.java:2573)
+	at org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.doSetInput(JavaEditor.java:2546)
+	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.doSetInput(CompilationUnitEditor.java:1423)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.lambda$1(AbstractTextEditor.java:3135)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:440)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:356)
+	at org.eclipse.ui.internal.WorkbenchWindow.lambda$3(WorkbenchWindow.java:2254)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:72)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:2252)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.internalInit(AbstractTextEditor.java:3152)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.init(AbstractTextEditor.java:3177)
+	at org.eclipse.ui.internal.EditorReference.initialize(EditorReference.java:365)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.create(CompatibilityPart.java:345)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:1001)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:966)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:139)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:411)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:333)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:193)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:108)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:77)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:59)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:132)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:1015)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:675)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:781)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:752)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:746)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:730)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl$1.handleEvent(PartServiceImpl.java:107)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.lambda$0(UIEventHandler.java:38)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:236)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:147)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4594)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application$1.syncExec(E4Application.java:215)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.handleEvent(UIEventHandler.java:38)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:204)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:199)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:233)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:138)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:81)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:42)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:63)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.e4.ui.model.application.ui.impl.ElementContainerImpl.setSelectedElement(ElementContainerImpl.java:177)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1361)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1311)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.closePart(StackRenderer.java:1269)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.access$0(StackRenderer.java:1255)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer$3.close(StackRenderer.java:1123)
+	at org.eclipse.swt.custom.CTabFolder.onMouse(CTabFolder.java:1961)
+	at org.eclipse.swt.custom.CTabFolder.lambda$0(CTabFolder.java:336)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4145)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1055)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3958)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3561)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1173)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1062)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:628)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:563)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:151)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:155)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+!SUBENTRY 2 org.eclipse.core.filebuffers 4 0 2019-12-17 17:59:55.764
+!MESSAGE Cannot determine URI for '/Assignment4/src/BasicRobotFeatureSystem.java'.
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2019-12-17 17:59:58.258
+!MESSAGE Error setting focus to : org.eclipse.e4.ui.model.application.ui.basic.impl.PartImpl model.xml
+!STACK 0
+java.lang.NullPointerException
+	at de.ovgu.featureide.fm.ui.editors.FeatureModelEditor.setFocus(FeatureModelEditor.java:364)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.delegateSetFocus(CompatibilityPart.java:225)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:320)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:326)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:248)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:139)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.focusGui(PartRenderingEngine.java:808)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer$1.setFocus(ContributedPartRenderer.java:106)
+	at org.eclipse.swt.custom.CTabItem.setFocus(CTabItem.java:343)
+	at org.eclipse.swt.custom.CTabFolder.setFocus(CTabFolder.java:2642)
+	at org.eclipse.swt.widgets.Control.fixFocus(Control.java:1071)
+	at org.eclipse.swt.widgets.Control.setVisible(Control.java:3971)
+	at org.eclipse.swt.custom.CTabFolder.setSelection(CTabFolder.java:3186)
+	at org.eclipse.swt.custom.CTabFolder.setSelection(CTabFolder.java:3143)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.showTab(StackRenderer.java:1308)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.lambda$0(LazyStackRenderer.java:75)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.lambda$0(UIEventHandler.java:38)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:236)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:147)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4594)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application$1.syncExec(E4Application.java:215)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.handleEvent(UIEventHandler.java:38)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:204)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:199)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:233)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:138)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:81)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:42)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:63)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.e4.ui.model.application.ui.impl.ElementContainerImpl.setSelectedElement(ElementContainerImpl.java:177)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1361)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1311)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.closePart(StackRenderer.java:1269)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.access$0(StackRenderer.java:1255)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer$3.close(StackRenderer.java:1123)
+	at org.eclipse.swt.custom.CTabFolder.onMouse(CTabFolder.java:1961)
+	at org.eclipse.swt.custom.CTabFolder.lambda$0(CTabFolder.java:336)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4145)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1055)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3958)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3561)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1173)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1062)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:628)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:563)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:151)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:155)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2019-12-17 17:59:58.298
+!MESSAGE Error setting focus to : org.eclipse.e4.ui.model.application.ui.basic.impl.PartImpl model.xml
+!STACK 0
+java.lang.NullPointerException
+	at de.ovgu.featureide.fm.ui.editors.FeatureModelEditor.setFocus(FeatureModelEditor.java:364)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.delegateSetFocus(CompatibilityPart.java:225)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:320)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:326)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:248)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:139)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.focusGui(PartRenderingEngine.java:808)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.activate(PartServiceImpl.java:769)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.activate(PartServiceImpl.java:684)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.activate(PartServiceImpl.java:679)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1376)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1311)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.closePart(StackRenderer.java:1269)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.access$0(StackRenderer.java:1255)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer$3.close(StackRenderer.java:1123)
+	at org.eclipse.swt.custom.CTabFolder.onMouse(CTabFolder.java:1961)
+	at org.eclipse.swt.custom.CTabFolder.lambda$0(CTabFolder.java:336)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4145)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1055)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3958)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3561)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1173)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1062)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:628)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:563)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:151)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:155)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 2 2019-12-17 17:59:58.318
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.e4.ui.workbench".
+!STACK 0
+java.lang.NullPointerException
+	at de.ovgu.featureide.fm.ui.editors.FeatureModelEditor.getDiagramAction(FeatureModelEditor.java:207)
+	at de.ovgu.featureide.fm.ui.editors.featuremodel.FeatureModelEditorContributor.hookGlobalDiagramActions(FeatureModelEditorContributor.java:78)
+	at de.ovgu.featureide.fm.ui.editors.featuremodel.FeatureModelEditorContributor.setActiveEditor(FeatureModelEditorContributor.java:73)
+	at org.eclipse.ui.internal.EditorActionBars.partChanged(EditorActionBars.java:343)
+	at org.eclipse.ui.internal.WorkbenchPage.updateActivations(WorkbenchPage.java:325)
+	at org.eclipse.ui.internal.WorkbenchPage.access$2(WorkbenchPage.java:306)
+	at org.eclipse.ui.internal.WorkbenchPage$E4PartListener.partActivated(WorkbenchPage.java:213)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl$3.run(PartServiceImpl.java:253)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.firePartActivated(PartServiceImpl.java:250)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.activate(PartServiceImpl.java:775)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.activate(PartServiceImpl.java:684)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.activate(PartServiceImpl.java:679)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1376)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1311)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.closePart(StackRenderer.java:1269)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.access$0(StackRenderer.java:1255)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer$3.close(StackRenderer.java:1123)
+	at org.eclipse.swt.custom.CTabFolder.onMouse(CTabFolder.java:1961)
+	at org.eclipse.swt.custom.CTabFolder.lambda$0(CTabFolder.java:336)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4145)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1055)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3958)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3561)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1173)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1062)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:628)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:563)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:151)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:155)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2019-12-17 17:59:58.326
+!MESSAGE An exception occurred while notifying part listeners
+!STACK 0
+java.lang.NullPointerException
+	at de.ovgu.featureide.fm.ui.editors.FeatureModelEditor.getDiagramAction(FeatureModelEditor.java:207)
+	at de.ovgu.featureide.fm.ui.editors.featuremodel.FeatureModelEditorContributor.hookGlobalDiagramActions(FeatureModelEditorContributor.java:78)
+	at de.ovgu.featureide.fm.ui.editors.featuremodel.FeatureModelEditorContributor.setActiveEditor(FeatureModelEditorContributor.java:73)
+	at org.eclipse.ui.internal.EditorActionBars.partChanged(EditorActionBars.java:343)
+	at org.eclipse.ui.internal.WorkbenchPage.updateActivations(WorkbenchPage.java:325)
+	at org.eclipse.ui.internal.WorkbenchPage.access$2(WorkbenchPage.java:306)
+	at org.eclipse.ui.internal.WorkbenchPage$E4PartListener.partActivated(WorkbenchPage.java:213)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl$3.run(PartServiceImpl.java:253)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.firePartActivated(PartServiceImpl.java:250)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.activate(PartServiceImpl.java:775)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.activate(PartServiceImpl.java:684)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.activate(PartServiceImpl.java:679)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1376)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1311)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.closePart(StackRenderer.java:1269)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.access$0(StackRenderer.java:1255)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer$3.close(StackRenderer.java:1123)
+	at org.eclipse.swt.custom.CTabFolder.onMouse(CTabFolder.java:1961)
+	at org.eclipse.swt.custom.CTabFolder.lambda$0(CTabFolder.java:336)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4145)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1055)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3958)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3561)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1173)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1062)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:628)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:563)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:151)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:155)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2019-12-17 17:59:58.366
+!MESSAGE Error setting focus to : org.eclipse.e4.ui.model.application.ui.basic.impl.PartImpl model.xml
+!STACK 0
+java.lang.NullPointerException
+	at de.ovgu.featureide.fm.ui.editors.FeatureModelEditor.setFocus(FeatureModelEditor.java:364)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.delegateSetFocus(CompatibilityPart.java:225)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:320)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:326)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:248)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:139)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.focusGui(PartRenderingEngine.java:808)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer$1.setFocus(ContributedPartRenderer.java:106)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer$2.mouseUp(StackRenderer.java:1111)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:224)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4145)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1055)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3958)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3561)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1173)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1062)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:628)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:563)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:151)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:155)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-17 18:00:42.121
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-17 18:00:42.149
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-17 18:00:44.408
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-17 18:00:44.525
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-17 18:01:40.979
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-17 18:01:41.001
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 10:17:59.913
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 10:17:59.926
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 10:18:39.100
+!MESSAGE Failed to download org.eclipse.recommenders:index::zip:0.0.0
+!STACK 0
+org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact org.eclipse.recommenders:index:zip:0.0.0-SNAPSHOT in models (http://download.eclipse.org/recommenders/models/photon/)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:255)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:232)
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:303)
+	at org.eclipse.recommenders.models.ModelRepository.resolveInternal(ModelRepository.java:193)
+	at org.eclipse.recommenders.models.ModelRepository.resolve(ModelRepository.java:172)
+	at org.eclipse.recommenders.internal.models.rcp.EclipseModelRepository.resolve(EclipseModelRepository.java:168)
+	at org.eclipse.recommenders.internal.models.rcp.DownloadModelArchiveJob.run(DownloadModelArchiveJob.java:76)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Could not find artifact org.eclipse.recommenders:index:zip:0.0.0-SNAPSHOT in models (http://download.eclipse.org/recommenders/models/photon/)
+	at org.eclipse.aether.connector.basic.ArtifactTransportListener.transferFailed(ArtifactTransportListener.java:48)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:364)
+	at org.eclipse.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:76)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$DirectExecutor.execute(BasicRepositoryConnector.java:590)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector.get(BasicRepositoryConnector.java:258)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:529)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430)
+	... 8 more
+
+!ENTRY org.eclipse.recommenders.models.rcp 1 0 2019-12-18 10:18:39.110
+!MESSAGE org.eclipse.recommenders:index::zip:0.0.0 could not be resolved from the model repositories. Are you offline?
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 10:18:55.065
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 10:18:55.198
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 10:20:05.168
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 10:20:05.187
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+!SESSION 2019-12-18 10:20:51.988 -----------------------------------------------
+eclipse.buildId=4.9.0.I20180906-0745
+java.version=1.8.0_144
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=sv_SE
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2019-12-18 10:21:37.418
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\jespe'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2019-12-18 10:21:39.320
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $. ; version: 2.0.7.v20180504-0806
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:224)
+	at com.google.gson.Gson.fromJson(Gson.java:888)
+	at com.google.gson.Gson.fromJson(Gson.java:853)
+	at com.google.gson.Gson.fromJson(Gson.java:802)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:91)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:66)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:124)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:385)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:213)
+	... 9 more
+
+!ENTRY com.codeaffine.archive.ui 4 0 2019-12-18 10:23:00.385
+!MESSAGE error in opening zip file
+!STACK 0
+java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at com.codeaffine.archive.ui.internal.model.ArchiveReader.openZipFile(ArchiveReader.java:49)
+	at com.codeaffine.archive.ui.internal.model.ArchiveReader.read(ArchiveReader.java:39)
+	at com.codeaffine.archive.ui.internal.model.ArchiveReader.read(ArchiveReader.java:21)
+	at com.codeaffine.archive.ui.internal.viewer.ArchiveContentProvider.getChildren(ArchiveContentProvider.java:72)
+	at com.codeaffine.archive.ui.internal.viewer.ArchiveContentProvider.getChildren(ArchiveContentProvider.java:34)
+	at com.codeaffine.archive.ui.internal.viewer.ArchiveContentProviderWrapper.getChildren(ArchiveContentProviderWrapper.java:24)
+	at org.eclipse.ui.internal.navigator.extensions.SafeDelegateTreeContentProvider.getChildren(SafeDelegateTreeContentProvider.java:98)
+	at org.eclipse.ui.internal.navigator.extensions.SafeDelegateTreeContentProvider.getChildren(SafeDelegateTreeContentProvider.java:244)
+	at org.eclipse.ui.internal.navigator.extensions.SafeDelegateTreeContentProvider.getChildren(SafeDelegateTreeContentProvider.java:96)
+	at org.eclipse.ui.internal.navigator.NavigatorContentServiceContentProvider$1.run(NavigatorContentServiceContentProvider.java:160)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.navigator.NavigatorContentServiceContentProvider.internalGetChildren(NavigatorContentServiceContentProvider.java:146)
+	at org.eclipse.ui.internal.navigator.NavigatorContentServiceContentProvider.getChildren(NavigatorContentServiceContentProvider.java:132)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.getRawChildren(AbstractTreeViewer.java:1415)
+	at org.eclipse.jface.viewers.TreeViewer.getRawChildren(TreeViewer.java:350)
+	at org.eclipse.jface.viewers.StructuredViewer.getFilteredChildren(StructuredViewer.java:903)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.getSortedChildren(AbstractTreeViewer.java:621)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.createChildren(AbstractTreeViewer.java:813)
+	at org.eclipse.jface.viewers.TreeViewer.createChildren(TreeViewer.java:604)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.createChildren(AbstractTreeViewer.java:766)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.setExpandedState(AbstractTreeViewer.java:2518)
+	at org.eclipse.ui.navigator.CommonNavigator.handleDoubleClick(CommonNavigator.java:563)
+	at org.eclipse.ui.navigator.resources.ProjectExplorer.handleDoubleClick(ProjectExplorer.java:257)
+	at org.eclipse.ui.navigator.CommonNavigator$4$1.run(CommonNavigator.java:536)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.navigator.CommonNavigator$4.doubleClick(CommonNavigator.java:533)
+	at org.eclipse.jface.viewers.StructuredViewer$1.run(StructuredViewer.java:833)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.JFaceUtil.lambda$0(JFaceUtil.java:47)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:176)
+	at org.eclipse.jface.viewers.StructuredViewer.fireDoubleClick(StructuredViewer.java:830)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.handleDoubleSelect(AbstractTreeViewer.java:1518)
+	at org.eclipse.ui.navigator.CommonViewer.handleDoubleSelect(CommonViewer.java:448)
+	at org.eclipse.jface.viewers.StructuredViewer$4.widgetDefaultSelected(StructuredViewer.java:1260)
+	at org.eclipse.jface.util.OpenStrategy.fireDefaultSelectionEvent(OpenStrategy.java:252)
+	at org.eclipse.jface.util.OpenStrategy.access$0(OpenStrategy.java:250)
+	at org.eclipse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:309)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4145)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1055)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3958)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3561)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1173)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1062)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:628)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:563)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:151)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:155)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:199)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:391)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:246)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:595)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1501)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 10:28:40.647
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 10:28:40.673
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 10:31:18.734
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 10:31:18.751
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 10:33:28.999
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 10:33:29.010
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 10:35:02.015
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 10:35:02.127
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 10:36:50.154
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 10:36:50.166
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 10:37:18.509
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 10:37:18.519
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 10:51:47.494
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 10:51:47.506
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 12:09:59.942
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 12:09:59.964
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 12:13:02.314
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 12:13:02.326
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 12:18:48.299
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 12:18:48.312
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 12:20:46.990
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 12:20:47.002
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 12:21:59.484
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 12:21:59.494
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 12:25:12.025
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 12:25:12.037
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 12:31:35.482
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 12:31:35.493
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 12:33:49.069
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 12:33:49.082
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 12:35:44.248
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-12-18 12:35:44.259
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!

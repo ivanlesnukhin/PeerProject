@@ -1,0 +1,18 @@
+<project name="PropertyCopy" default="copyPropertiesToBin">
+
+	<!-- adapt the folders (here, this build.ant file is in a sub-folder of the projet) -->
+	<property name="projectHome" location="." />
+	<property name="BinFolder" location="./target/classes/myRobot" />
+
+	<target name="copyPropertiesToBin">
+		<delete file="${BinFolder}/runtime.properties" />
+		<copy file="${projectHome}/runtime.properties" todir="${BinFolder}" />
+	</target>
+	
+	<target name="setNewProperties">
+		<delete file="${projectHome}/src/runtime.properties" />
+		<copy file="${projectHome}/runtime.properties" todir="${projectHome}/src/" />
+	</target>
+	
+
+</project>

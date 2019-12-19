@@ -5,3 +5,120 @@
 2019-12-02 09:22:33,415 [Worker-3: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
 2019-12-02 09:39:33,742 [Worker-3: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2019-12-02 11:22:23,138 [Worker-0: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2019-12-17 17:22:57,431 [Worker-3: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2019-12-17 18:00:41,083 [Worker-28: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Group13:Assignment6:0.0.1-SNAPSHOT @ C:\Users\jespe\Documents\Assignment3ComplexSystems\PeerProject\features\Assignment6\pom.xml.
+2019-12-17 18:00:42,117 [Worker-28: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-17 18:00:42,137 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-17 18:00:42,145 [Worker-28: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-17 18:00:42,157 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jespe\Documents\Assignment3ComplexSystems\PeerProject\features\Assignment6\src\test\resources
+2019-12-17 18:00:42,974 [Worker-30: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/net/sf/robocode/robocode.api/1.9.2.1/robocode.api-1.9.2.1-sources.jar
+2019-12-17 18:00:43,170 [Worker-30: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/net/sf/robocode/robocode.api/1.9.2.1/robocode.api-1.9.2.1-sources.jar
+2019-12-17 18:00:43,763 [Worker-30: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for net.sf.robocode:robocode.api:1.9.2.1
+2019-12-17 18:00:44,408 [Worker-30: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-17 18:00:44,521 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-17 18:00:44,525 [Worker-30: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-17 18:00:44,593 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jespe\Documents\Assignment3ComplexSystems\PeerProject\features\Assignment6\src\test\resources
+2019-12-17 18:01:40,978 [Worker-20: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-17 18:01:40,996 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-17 18:01:41,001 [Worker-20: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-17 18:01:41,012 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jespe\Documents\Assignment3ComplexSystems\PeerProject\features\Assignment6\src\test\resources
+2019-12-18 10:17:59,911 [Worker-33: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 10:17:59,924 [Worker-33: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-12-18 10:17:59,925 [Worker-33: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 10:17:59,934 [Worker-33: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jespe\Documents\Assignment3ComplexSystems\PeerProject\features\Assignment6\src\test\resources
+2019-12-18 10:18:39,099 [Worker-16: Resolving model org.eclipse.recommenders:index::zip:0.0.0] WARN  o.e.r.models.ModelRepository - Failed to download org.eclipse.recommenders:index::zip:0.0.0
+org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact org.eclipse.recommenders:index:zip:0.0.0-SNAPSHOT in models (http://download.eclipse.org/recommenders/models/photon/)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:453) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:255) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:232) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:303) ~[na:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolveInternal(ModelRepository.java:193) [org.eclipse.recommenders.models_2.5.4.v20180909-1132.jar:na]
+	at org.eclipse.recommenders.models.ModelRepository.resolve(ModelRepository.java:172) [org.eclipse.recommenders.models_2.5.4.v20180909-1132.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.EclipseModelRepository.resolve(EclipseModelRepository.java:168) [org.eclipse.recommenders.models.rcp_2.5.4.v20180909-1132.jar:na]
+	at org.eclipse.recommenders.internal.models.rcp.DownloadModelArchiveJob.run(DownloadModelArchiveJob.java:76) [org.eclipse.recommenders.models.rcp_2.5.4.v20180909-1132.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) [org.eclipse.core.jobs_3.10.100.v20180817-1215.jar:na]
+Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Could not find artifact org.eclipse.recommenders:index:zip:0.0.0-SNAPSHOT in models (http://download.eclipse.org/recommenders/models/photon/)
+	at org.eclipse.aether.connector.basic.ArtifactTransportListener.transferFailed(ArtifactTransportListener.java:48) ~[org.apache.maven.resolver.connector.basic_1.0.3.v20170405-0725.jar:1.0.3]
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:364) ~[org.apache.maven.resolver.connector.basic_1.0.3.v20170405-0725.jar:1.0.3]
+	at org.eclipse.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:76) ~[na:na]
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$DirectExecutor.execute(BasicRepositoryConnector.java:590) ~[org.apache.maven.resolver.connector.basic_1.0.3.v20170405-0725.jar:1.0.3]
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector.get(BasicRepositoryConnector.java:258) ~[org.apache.maven.resolver.connector.basic_1.0.3.v20170405-0725.jar:1.0.3]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:529) ~[na:na]
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:430) ~[na:na]
+	... 8 common frames omitted
+2019-12-18 10:18:55,064 [Worker-30: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 10:18:55,194 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-18 10:18:55,198 [Worker-30: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 10:18:55,209 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jespe\Documents\Assignment3ComplexSystems\PeerProject\features\Assignment6\src\test\resources
+2019-12-18 10:20:05,168 [Worker-32: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 10:20:05,183 [Worker-32: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-18 10:20:05,186 [Worker-32: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 10:20:05,196 [Worker-32: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jespe\Documents\Assignment3ComplexSystems\PeerProject\features\Assignment6\src\test\resources
+2019-12-18 10:21:36,917 [Worker-0: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2019-12-18 10:28:40,646 [Worker-12: Launching Main (1)] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 10:28:40,662 [Worker-12: Launching Main (1)] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-18 10:28:40,673 [Worker-12: Launching Main (1)] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 10:28:40,680 [Worker-12: Launching Main (1)] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jespe\Documents\Assignment3ComplexSystems\PeerProject\features\Assignment6\src\test\resources
+2019-12-18 10:31:18,733 [Worker-17: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 10:31:18,747 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-18 10:31:18,751 [Worker-17: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 10:31:18,761 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jespe\Documents\Assignment3ComplexSystems\PeerProject\features\Assignment6\src\test\resources
+2019-12-18 10:33:28,998 [Worker-16: Launching Assignment6 build.ant] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 10:33:29,007 [Worker-16: Launching Assignment6 build.ant] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-18 10:33:29,009 [Worker-16: Launching Assignment6 build.ant] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 10:33:29,017 [Worker-16: Launching Assignment6 build.ant] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jespe\Documents\Assignment3ComplexSystems\PeerProject\features\Assignment6\src\test\resources
+2019-12-18 10:35:02,015 [Worker-19: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 10:35:02,123 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-18 10:35:02,126 [Worker-19: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 10:35:02,135 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jespe\Documents\Assignment3ComplexSystems\PeerProject\features\Assignment6\src\test\resources
+2019-12-18 10:36:50,153 [Worker-19: Build Project] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 10:36:50,162 [Worker-19: Build Project] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-18 10:36:50,165 [Worker-19: Build Project] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 10:36:50,173 [Worker-19: Build Project] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jespe\Documents\Assignment3ComplexSystems\PeerProject\features\Assignment6\src\test\resources
+2019-12-18 10:37:18,508 [Worker-20: Launching Assignment6 build.ant] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 10:37:18,517 [Worker-20: Launching Assignment6 build.ant] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-18 10:37:18,519 [Worker-20: Launching Assignment6 build.ant] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 10:37:18,537 [Worker-20: Launching Assignment6 build.ant] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jespe\Documents\Assignment3ComplexSystems\PeerProject\features\Assignment6\src\test\resources
+2019-12-18 10:51:47,493 [ModalContext] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 10:51:47,502 [ModalContext] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-18 10:51:47,505 [ModalContext] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 10:51:47,512 [ModalContext] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jespe\Documents\Assignment3ComplexSystems\PeerProject\features\Assignment6\src\test\resources
+2019-12-18 12:05:21,816 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2019-12-18 12:05:40,014 [Worker-53: Launching Assignment6] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\jespe\Documents\Assignment3ComplexSystems\PeerProject\features\Assignment6
+2019-12-18 12:05:40,015 [Worker-53: Launching Assignment6] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B package
+2019-12-18 12:09:59,941 [Worker-56: Build Project] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 12:09:59,960 [Worker-56: Build Project] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-18 12:09:59,963 [Worker-56: Build Project] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 12:09:59,973 [Worker-56: Build Project] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jespe\Documents\Assignment3ComplexSystems\PeerProject\features\Assignment6\src\test\resources
+2019-12-18 12:13:02,313 [Worker-53: Build Project] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 12:13:02,323 [Worker-53: Build Project] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-18 12:13:02,326 [Worker-53: Build Project] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 12:13:02,333 [Worker-53: Build Project] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jespe\Documents\Assignment3ComplexSystems\PeerProject\features\Assignment6\src\test\resources
+2019-12-18 12:18:48,297 [Worker-58: Build Project] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 12:18:48,307 [Worker-58: Build Project] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-18 12:18:48,311 [Worker-58: Build Project] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 12:18:48,318 [Worker-58: Build Project] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jespe\Documents\Assignment3ComplexSystems\PeerProject\features\Assignment6\src\test\resources
+2019-12-18 12:20:46,989 [Worker-58: Build Project] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 12:20:46,998 [Worker-58: Build Project] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-18 12:20:47,001 [Worker-58: Build Project] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 12:20:47,008 [Worker-58: Build Project] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jespe\Documents\Assignment3ComplexSystems\PeerProject\features\Assignment6\src\test\resources
+2019-12-18 12:21:59,483 [Worker-58: Build Project] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 12:21:59,491 [Worker-58: Build Project] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-18 12:21:59,494 [Worker-58: Build Project] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 12:21:59,500 [Worker-58: Build Project] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jespe\Documents\Assignment3ComplexSystems\PeerProject\features\Assignment6\src\test\resources
+2019-12-18 12:25:12,025 [Worker-62: Build Project] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 12:25:12,033 [Worker-62: Build Project] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-18 12:25:12,037 [Worker-62: Build Project] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 12:25:12,044 [Worker-62: Build Project] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jespe\Documents\Assignment3ComplexSystems\PeerProject\features\Assignment6\src\test\resources
+2019-12-18 12:31:35,481 [Worker-60: Launching Assignment6 build.ant] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 12:31:35,490 [Worker-60: Launching Assignment6 build.ant] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-18 12:31:35,493 [Worker-60: Launching Assignment6 build.ant] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 12:31:35,500 [Worker-60: Launching Assignment6 build.ant] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jespe\Documents\Assignment3ComplexSystems\PeerProject\features\Assignment6\src\test\resources
+2019-12-18 12:33:49,067 [Worker-66: Build Project] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 12:33:49,078 [Worker-66: Build Project] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-18 12:33:49,082 [Worker-66: Build Project] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 12:33:49,089 [Worker-66: Build Project] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jespe\Documents\Assignment3ComplexSystems\PeerProject\features\Assignment6\src\test\resources
+2019-12-18 12:35:44,248 [Worker-68: Build Project] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 12:35:44,255 [Worker-68: Build Project] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-12-18 12:35:44,258 [Worker-68: Build Project] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-12-18 12:35:44,266 [Worker-68: Build Project] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jespe\Documents\Assignment3ComplexSystems\PeerProject\features\Assignment6\src\test\resources
