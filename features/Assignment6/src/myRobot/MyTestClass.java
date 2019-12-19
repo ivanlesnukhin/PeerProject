@@ -1,7 +1,11 @@
 import robocode.*;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.assertSame;
+//import static org.junit.jupiter.api.Assertions.*;
 import java.awt.geom.Point2D;
-import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.Test;
 
 
 class MyTestClass {
@@ -43,6 +47,7 @@ class MyTestClass {
 		assertSame(newAngle, oldAngle + deltaRadarAngle);
 	}
 	
+	
 	// RandomMovement Tests
 	
 	private AdvancedRobot robotRM = new AdvancedRobot();
@@ -57,4 +62,5 @@ class MyTestClass {
 		assertSame(oldRobotLocation, new Point2D.Double(robotRM.getX(), robotRM.getY()));
 		
 	}
+	
 }
