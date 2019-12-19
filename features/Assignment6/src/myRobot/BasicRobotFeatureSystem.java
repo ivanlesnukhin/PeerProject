@@ -21,14 +21,12 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 			Random = false,
 			GF = false,
 			//IMPLEMENTATION OF LT AND CT
-			//LT = false,
-			//CT = false,
+			LT = false,
+			CT = false,
 			DBL_Bullet_Power = false,
 			BBY = false,
 			RBY = false,
-			GWY = false,
-			LT = false,
-			CT = false;
+			GWY = false;
     
 
 	public BasicRobotFeatureSystem() {
@@ -52,13 +50,12 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 		//ClassLoader getClass.getclassLoader.getResourceAStream()
 
 		// Sets color
-		
-		System.out.print(WaveSurfing + "\n");
 		// selects movement method
 		if(WaveSurfing) {
 			movementMeth = new WaveSurfing(this);
-			System.out.print(WaveSurfing + "\n");
+			System.out.print("WaveSurfing2: " + WaveSurfing + "\n");
 		} else if(Random) {
+			System.out.print("Random2: " +Random + "\n");
 			movementMeth = new RandomMovement(this);
 		}
 
@@ -79,9 +76,7 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 			firingMethod = new LinearTargeting(this);
 		} else if (CT) {
 			firingMethod = new CircularTargeting(this); 
-
-		}
-
+		} 
 		// Sets bullet power
 		if (DBL_Bullet_Power)
 			BULLET_POWER = 1.9;
@@ -115,11 +110,17 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 	}
 
     public void onScannedRobot(ScannedRobotEvent e) {
+		System.out.print("Random3: " + Random + "\n");
+		System.out.print("WaveSurfing3: " + WaveSurfing + "\n");
     	System.out.print(WaveSurfing + "\n");
-    	System.out.print("TEST OUTPUT BLA BLA BLA");
-    	firingMethod.onScannedRobot(e);
-    	System.out.print("FIRING METHOD WORKS!!!");
-    	movementMeth.onScannedRobot(e);
+    	if(CT || LT || GF)
+    	{
+    		firingMethod.onScannedRobot(e);
+    	}
+    	if(WaveSurfing || Random)
+    	{
+    		movementMeth.onScannedRobot(e);
+    	}    	
         
     }
 }
