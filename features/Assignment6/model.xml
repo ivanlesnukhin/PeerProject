@@ -23,11 +23,11 @@
 				<feature name="Random"/>
 			</and>
 			<alt abstract="true" name="Firing">
-				<and name="GF">
+				<and name="GuessFactor">
 					<feature name="DBL_Bullet_Power"/>
 				</and>
-				<feature name="СT"/>
-				<feature name="LT"/>
+				<feature name="CircularTargeting"/>
+				<feature name="LinearTargeting"/>
 			</alt>
 			<alt abstract="true" name="Color">
 				<feature name="BBY"/>

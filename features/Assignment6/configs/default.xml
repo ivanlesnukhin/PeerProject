@@ -7,11 +7,11 @@
 	<feature automatic="unselected" name="visibleEnemyWaves"/>
 	<feature automatic="selected" manual="selected" name="Movement"/>
 	<feature manual="selected" name="Random"/>
-	<feature automatic="selected" manual="selected" name="Firing"/>
-	<feature automatic="unselected" name="GF"/>
-	<feature automatic="unselected" name="DBL_Bullet_Power"/>
-	<feature automatic="unselected" name="СT"/>
-	<feature manual="selected" name="LT"/>
+	<feature manual="selected" name="Firing"/>
+	<feature name="GuessFactor"/>
+	<feature name="DBL_Bullet_Power"/>
+	<feature name="CircularTargeting"/>
+	<feature name="LinearTargeting"/>
 	<feature automatic="selected" manual="selected" name="Color"/>
 	<feature automatic="unselected" name="BBY"/>
 	<feature manual="selected" name="RBY"/>

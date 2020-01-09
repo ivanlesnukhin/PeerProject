@@ -19,10 +19,10 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 			Wall_Smoothing = false,
 			visibleEnemyWaves = false,
 			Random = false,
-			GF = false,
+			GuessFactor = false,
 			//IMPLEMENTATION OF LT AND CT
-			LT = false,
-			CT = false,
+			LinearTargeting = false,
+			CircularTargeting = false,
 			DBL_Bullet_Power = false,
 			BBY = false,
 			RBY = false,
@@ -38,10 +38,10 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 		Wall_Smoothing = cm.getProperty ("Wall_Smoothing", true);
 		visibleEnemyWaves = cm.getProperty ("visibleEnemyWaves", true);
 		Random = cm.getProperty ("Random", true);
-		GF = cm.getProperty ("GF", true);
+		GuessFactor = cm.getProperty ("GuessFactor", true);
 		//IMPLEMENTATION OF LT AND CT
-		LT = cm.getProperty("LT", true);
-		CT = cm.getProperty("СT", true);
+		LinearTargeting = cm.getProperty("LinearTargeting", true);
+		CircularTargeting = cm.getProperty("CircularTargeting", true);
 		DBL_Bullet_Power = cm.getProperty ("DBL_Bullet_Power", true);
 		BBY = cm.getProperty ("BBY", true);
 		RBY = cm.getProperty ("RBY", true);
@@ -63,7 +63,7 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 		lastEnemyVelocity = 0;
 
 		// Sets up guessfactor targeting
-		if (GF) {
+		if (GuessFactor) {
 			String movementMethod = "";
 			if(WaveSurfing) {
 				movementMethod = "WaveSurfing";
@@ -72,9 +72,9 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 			}
 			firingMethod = new GuessFactor(this, lastEnemyVelocity, lateralDirection, movementMethod);
 			//IMPLEMENTATION OF LT AND CT
-		} else if(LT) {
+		} else if(LinearTargeting) {
 			firingMethod = new LinearTargeting(this);
-		} else if (CT) {
+		} else if (CircularTargeting) {
 			firingMethod = new CircularTargeting(this); 
 		} 
 		// Sets bullet power
@@ -113,7 +113,7 @@ public class BasicRobotFeatureSystem extends AdvancedRobot {
 		System.out.print("Random3: " + Random + "\n");
 		System.out.print("WaveSurfing3: " + WaveSurfing + "\n");
     	System.out.print(WaveSurfing + "\n");
-    	if(CT || LT || GF)
+    	if(CircularTargeting || LinearTargeting || GuessFactor)
     	{
     		firingMethod.onScannedRobot(e);
     	}
